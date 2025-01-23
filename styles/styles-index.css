@@ -28,7 +28,6 @@ h1 {
 /* Cabeçalho */
 header {
     position: relative; /* Necessário para o overlay ficar atrás do conteúdo */
-    background-image: url('./background/1920x1080.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -37,7 +36,7 @@ header {
 }
 
 .custom-header {
-    background-image: url('./background/1920x1080.jpg');
+    background-image: url('../background/1920x1080.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed; /* Para a imagem ficar fixa ao rolar a página */
@@ -88,35 +87,54 @@ section p {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
 }
 
 /* Efeito ao passar o mouse */
 .card-produto:hover {
-    transform: translateY(-10px); /* Eleva o card */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-15px); /* Eleva o card */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 /* Imagem do Produto */
-.card-produto img {
+/*.card-produto img {
     width: 100%;
     height: 200px;
     object-fit: cover;
     border-bottom: 2px solid #eee;
+}-->
+*/
+.card-produto img {
+    width: 90%; /* Define a largura como 90% da largura do card */
+    height: auto; /* Mantém a proporção da imagem */
+    margin: 0 auto; /* Centraliza a imagem dentro do card */
+    display: block; /* Garante que a imagem seja tratada como bloco */
+    border-radius: 8px; /* (Opcional) Deixa as bordas arredondadas para um estilo mais moderno */
 }
+
 
 /* Informações do Produto */
 .card-produto .info {
     padding: 15px;
+    font-size: 1.2em;
+    color: #333;
+    margin-top: auto;
 }
 
-.card-produto h3 {
+.card-produto .descricao {
+    padding: 15px;
     font-size: 1.2em;
     color: #333;
     margin-bottom: 10px;
 }
 
+
+
 .card-produto p {
-    font-size: 1em;
+    font-size: 0.7em;
     color: #666;
     margin-bottom: 15px;
 }
@@ -126,6 +144,16 @@ section p {
     font-size: 1.1em;
     font-weight: bold;
     color: #34a300; /* Cor destacada para o preço */
+    font-size: 20px; /* Tamanho do texto maior para destaque */
+    
+}
+/* Estilo para o preço antigo */
+    .preco-antigo {
+    color: red; /* Cor destacada */
+    text-decoration: line-through; /* Risco de cartado */
+    font-size: 16px; /* Tamanho do texto */
+    margin-bottom: 5px; /* Espaço abaixo do preço */
+    font-size: 15px; /* Tamanho do texto maior para destaque */
 }
 
 /* Botão de Compra */
@@ -141,6 +169,7 @@ section p {
     text-transform: uppercase;
     font-weight: bold;
     transition: background-color 0.3s ease;
+    
 }
 
 .card-produto .btn-compra:hover {

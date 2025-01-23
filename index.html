@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Telescopio Shop Gym</title>
-    <link rel="stylesheet" href="./styles.css">
-    <link rel="icon" href="icon/favicon-16x16.png" type="image/png">
+    <link rel="stylesheet" href="./styles/styles-index.css">
+    <link rel="icon" href="./icon/favicon-16x16.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -32,61 +32,122 @@
         <h2 class="text-center text-primary">Nossos Produtos</h2>
         <div class="container mt-4">
             <div class="row text-center">
-                <!-- Produto 1 -->
+                <!--Incio de um produto -->
                 <div class="container-produtos">
                     <div class="card-produto">
-                        <img src="./produtos/binoculos 10x25.jpg" alt="Produto 1">
+                        <img src="./produtos/TELESCOPIOS-REFRA/GREIKA MAK90.png" alt="Produto 1">
                         <div class="info">
-                            <h3>Produto 1</h3>
-                            <p>Descrição do produto 1. Qualidade superior e preço acessível.</p>
-                            <div class="preco">R$ 99,99</div>
-                            <button class="btn-compra">Comprar</button>
+                            <h2 class="descricao">Telescópio Greika MAK90 Cassegrain Maksutov</h2>
+                            <p>Viva a experiência de obter imagens espaciais inesquecíveis de alta qualidade com este Telescópio Greika MAK90 Cassegrain Maksutov.</p>
+                            <div class="preco-antigo">R$ 3.529,76</div>
+                            <div class="preco">R$ 2.529,76</div>
+                            <button class="btn-compra" onclick="openProductPage('produto01')">Comprar</button>
                         </div>
                     </div>
-                
+                    <!--Incio de um produto -->                
                     <div class="card-produto">
-                        <img src="./produtos/binoculos 10x25 e bolsa.jpg" alt="Produto 2">
+                        <img src="./produtos/TELESCOPIO-REFLE/Telescópio Greika 1000114 Equatorial Newtoniano.png" alt="Produto 1">
                         <div class="info">
-                            <h3>Produto 2</h3>
-                            <p>Descrição do produto 2. Ideal para iniciantes e profissionais.</p>
-                            <div class="preco">R$ 129,99</div>
-                            <button class="btn-compra">Comprar</button>
+                            <h2 class="descricao">Telescópio Greika 1000114 Equatorial Newtoniano</h2>
+                            <p>Observe com detalhes planetas, sistema solar, eventos celestes e terrestres.</p>
+                            <div class="preco-antigo">R$ 3.929,76</div>
+                            <div class="preco">R$ 2.829,76</div>
+                            <button class="btn-compra" onclick="openProductPage('produto01')">Comprar</button>
+                        </div>
+                    </div>
+                    <!--Incio de um produto -->                    
+                    <div class="card-produto">
+                        <img src="./produtos/TELESCOPIO-REFLE/Telescópio Greika 1400150 Equatorial Newtoniano.png" alt="Produto 1">
+                        <div class="info">
+                            <h2 class="descricao">Telescópio Greika 1400150 Equatorial Newtoniano</h2>
+                            <p>Observação detalhada do sistema solar e eventos solares é possível 
+                                observar o espetáculo da movimentação das estrelas no 
+                                céu e todos os eventos celestes e eclipses lunares solares.</p>
+                            <div class="preco-antigo">R$ 4.529,76</div>
+                            <div class="preco">R$ 3.229,76</div>
+                            <button class="btn-compra" onclick="openProductPage('produto01')">Comprar</button>
+                        </div>
+                    </div>
+                    <!--Incio de um produto -->
+                    <div class="card-produto">
+                        <img src="./produtos/TELESCOPIOS-REFRA/Telescópio Greika 90060 Refrator Azimutal.png" alt="Produto 1">
+                        <div class="info">
+                            <h2 class="descricao">Telescópio Greika 90060 Refrator Azimutal</h2>
+                            <p>Telescópio Greika Refrator Azimutal 90060 com Ampliação até 675x para Observação Celeste e Terrestre.</p>
+                            <div class="preco-antigo">R$ 1.789,76</div>
+                            <div class="preco">R$ 1.229,99</div>
+                            <button class="btn-compra" onclick="openProductPage('produto01')">Comprar</button>
+                        </div>
+                    </div>
+                    <!--Incio de um produto -->
+                    <div class="card-produto">
+                        <img src="./produtos/TELESCOPIOS-REFRA/Telescópio Greika 70070 Refrator Azimutal.png" alt="Produto 1">
+                        <div class="info">
+                            <h2 class="descricao">Telescópio Greika 70070 Refrator Azimutal</h2>
+                            <p>Telescópio apropriado para observação de pássaros, aves e objetos fixos. E mais além, a Lua e Constelações de Órion, Lyra e Vulpecula.</p>
+                            <div class="preco-antigo">R$ 1.529,76</div>
+                            <div class="preco">R$ 1.089,76</div>
+                            <button class="btn-compra" onclick="openProductPage('produto01')">Comprar</button>
+                        </div>
+                    </div>
+                    <!--Incio de um produto -->
+                    <div class="card-produto">
+                        <img src="./produtos/TELESCOPIOS-REFRA/GREIKA MAK90.png" alt="Produto 1">
+                        <div class="info">
+                            <h2 class="descricao">Telescópio BM36060D Greika</h2>
+                            <p>O MAIS COMPACTO! Um equipamento leve de nova geração, compacto, especialmente 
+                                projetado para permitir que um modelo econômico possa concentrar 
+                                grande entrada de luz proporcionando assim visualizações celestiais 
+                                e terrestres de qualidade superior, preservando ainda um 
+                                excelente fator custo benefício.</p>
+                            <div class="preco-antigo">R$ 629,76</div>
+                            <div class="preco">R$ 489,76</div>
+                            <button class="btn-compra" onclick="openProductPage('produto01')">Comprar</button>
                         </div>
                     </div>
                     <div class="card-produto">
-                        <img src="./produtos/binoculos 10x25 e bolsa.jpg" alt="Produto 2">
+                        <img src="./produtos/BINOCULOS/BINOCULOREF.: BI 10X40-60.png" alt="Produto 1">
                         <div class="info">
-                            <h3>Produto 2</h3>
-                            <p>Descrição do produto 2. Ideal para iniciantes e profissionais.</p>
-                            <div class="preco">R$ 129,99</div>
-                            <button class="btn-compra">Comprar</button>
+                            <h2 class="descricao">Binóculo Greika 10-40x60</h2>
+                            <p>Ampliação: 10 a 40 xDiâmetro objetiva (mm): 60
+                                Sistema de foco: Central c/Zoom
+                                Construção: Prisma Porro Bak4 X-Vision
+                                Revestimento de lente: UV multirevestidas AzuisEscala visual em 1000m 
+                                (m): 60 em 10x
+                                Saída de pupila: 6mm em 10xPeso (gr): 1.045
+                                Medidas (cm): 23x7.4x19.5</p>
+                            <div class="preco-antigo">R$ 729,76</div>
+                            <div class="preco">R$ 559,76</div>
+                            <button class="btn-compra" onclick="openProductPage('produto01')">Comprar</button>
                         </div>
                     </div>
                     <div class="card-produto">
-                        <img src="./produtos/binoculos 10x25 e bolsa.jpg" alt="Produto 2">
+                        <img src="./produtos/BINOCULOS/Binóculos Greika 10x50 com Bolsa.png" alt="Produto 1">
                         <div class="info">
-                            <h3>Produto 2</h3>
-                            <p>Descrição do produto 2. Ideal para iniciantes e profissionais.</p>
-                            <div class="preco">R$ 129,99</div>
-                            <button class="btn-compra">Comprar</button>
+                            <h2 class="descricao">Binóculos Greika 10x50 com Bolsa</h2>
+                            <p>Observe as crateras da Lua ou estrelas duplas, 
+                                aglomerados estelares e até identifique algumas nebulosas.</p>
+                            <div class="preco-antigo">R$ 529,76</div>
+                            <div class="preco">R$ 369,76</div>
+                            <button class="btn-compra" onclick="openProductPage('produto01')">Comprar</button>
                         </div>
                     </div>
                     <div class="card-produto">
-                        <img src="./produtos/binoculos 10x25 e bolsa.jpg" alt="Produto 2">
+                        <img src="./produtos/BINOCULOS/binoculos 10x25.jpg" alt="Produto 1">
                         <div class="info">
-                            <h3>Produto 2</h3>
-                            <p>Descrição do produto 2. Ideal para iniciantes e profissionais.</p>
-                            <div class="preco">R$ 129,99</div>
-                            <button class="btn-compra">Comprar</button>
-                        </div>
-                    </div>
-                    <div class="card-produto">
-                        <img src="./produtos/binoculos 10x25 e bolsa.jpg" alt="Produto 2">
-                        <div class="info">
-                            <h3>Produto 2</h3>
-                            <p>Descrição do produto 2. Ideal para iniciantes e profissionais.</p>
-                            <div class="preco">R$ 129,99</div>
-                            <button class="btn-compra">Comprar</button>
+                            <h2 class="descricao">BINÓCULO 10x25</h2>
+                            <p>Corpo emborrachado;
+                                Ampliação: 10x;
+                                Campo de visão: 5.6;
+                                Objetiva: 25mm;
+                                Saída pupilar: 2.5mm;
+                                Distância saída pupilar: 10mm;
+                                Acompanha: bolsa exclusiva, alça e lenço para limpeza;
+                                Lentes: multicoat ruby;
+                                Material: metal com armadura de borracha;.</p>
+                            <div class="preco-antigo">R$ 399,76</div>
+                            <div class="preco">R$ 285,76</div>
+                            <button class="btn-compra" onclick="openProductPage('produto01')">Comprar</button>
                         </div>
                     </div>
                     <!-- Adicione mais produtos aqui -->
@@ -109,5 +170,33 @@
     <footer class="bg-dark text-white text-center py-3">
         <p>© 2025 Telescopio Shop Gym. Todos os direitos reservados.</p>
     </footer>
+
+    <!--<script>
+        function openProductPage(productId) {
+            window.location.href = `./pages/detalhes-produto01.html?produto=${productId}`;
+        }
+    </script>
+    -->
+
+    <script>
+        function openProductPage(productId) {
+            // Define um mapeamento de IDs de produtos para URLs de páginas
+            const productPages = {
+                'produto1': './pages/detalhes-produto01.html',
+                'produto2': './pages/detalhes-produto02.html',
+                'produto3': './pages/detalhes-produto03.html',
+            };
+    
+            // Verifica se o ID do produto existe no mapeamento
+            if (productPages[productId]) {
+                // Redireciona para a página correspondente
+                window.location.href = productPages[productId];
+            } else {
+                // Caso o ID não seja válido, redirecione para uma página de erro ou exiba uma mensagem
+                alert('Produto não encontrado!');
+            }
+        }
+    </script>
+    
 </body>
 </html>

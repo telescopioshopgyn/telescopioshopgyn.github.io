@@ -1,0 +1,72 @@
+body {
+    font-family: 'Roboto', sans-serif;  /* Usa a fonte Roboto */
+    font-weight: 400;  /* Peso normal */
+    font-style: normal;  /* Estilo normal */
+    font-variation-settings: "wdth" 100;  /* Largura normal, se a fonte suportar */
+}
+
+        .produto-detalhes {
+            display:flex;
+            gap: 20px;
+        }
+
+        #produto-imagem {
+            max-width: 300px;
+            max-height: 300px;
+        }
+
+        .caixa-info {
+            flex: 1;
+            border: 1px solid #ccc;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .botoes {
+            margin-top: 10px;
+        }
+
+
+
+        .material-symbols-outlined{
+            display: inline-flex;
+            align-items: center;
+            
+            
+        }
+        .botoes button,
+        .botoes a {
+            margin-right: 10px;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .botoes a {
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .botoes a img {
+            margin-right: 5px;
+        }
+
+        .galeria {
+            margin-top: 20px;
+        }
+
+        .galeria img {
+            max-width: 100px;
+            max-height: 100px;
+            margin: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .video-container {
+            margin-top: 20px;
+        }
