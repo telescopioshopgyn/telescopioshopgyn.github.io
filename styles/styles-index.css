@@ -60,6 +60,8 @@ header p {
 /* Seções */
 section {
     margin: 50px 0;
+    background-color: #fff;
+
 }
 
 section h2 {
@@ -148,7 +150,7 @@ section p {
     
 }
 /* Estilo para o preço antigo */
-    .preco-antigo {
+.preco-antigo {
     color: red; /* Cor destacada */
     text-decoration: line-through; /* Risco de cartado */
     font-size: 16px; /* Tamanho do texto */
@@ -178,16 +180,64 @@ section p {
 
 
 /* Rodapé */
+/* Footer Styles */
 footer {
-    background-color: #222;
-    color: white;
-    padding: 20px 0;
-}
-
-footer p {
+    background-color: #333; /* Cor de fundo do footer */
+    color: #fff; /* Cor da fonte */
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Espaçamento entre os elementos da esquerda e da direita */
+  }
+  
+  footer p {
     font-size: 1rem;
     margin: 0;
-}
+    display: inline; /* Torna o footer um contêiner de posicionamento */
+  }
+  
+  /* Informações de contato */
+  .contact-info {
+    justify-content: flex-start; /* Alinha os itens à esquerda */
+    flex-direction: column; /* Organiza os elementos em uma coluna */
+    margin-bottom: 10px; /* Espaçamento abaixo do bloco de contato */
+  }
+  
+  .contact-info p {
+    margin-bottom: 5px; /* Espaçamento entre as informações de contato */
+  }
+  
+  /* Redes Sociais */
+  .social-media {
+    display: flex;
+    justify-content: center; /* Centraliza os ícones */
+    margin-bottom: 10px; /* Espaçamento abaixo do bloco de redes sociais */
+  }
+  
+  .social-media a {
+    color: #fff; /* Define a cor dos ícones */
+    text-decoration: none; /* Remove o sublinhado dos links */
+    margin: 0 5px; /* Espaçamento entre os ícones */
+  }
+  
+  /* Formas de Pagamento */
+  .payment-info {
+    display: flex;
+    justify-content: flex-end; /* Alinha os ícones de pagamento à direita */
+    margin-bottom: 10px; /* Espaçamento abaixo do bloco de formas de pagamento */
+  }
+  
+  .payment-img {
+    width: 30px; /* Ajuste o tamanho conforme necessário */
+    height: auto;
+    margin: 0 5px;
+  }
+  
+  /* Copyright */
+  .copyright {
+    justify-content: flex-start; /* Alinha o copyright à esquerda */
+    text-align: left; /* Alinha o texto do copyright à esquerda */
+  }
 
 /* Ajustes para o Layout */
 .container {

@@ -65,7 +65,7 @@
 
         // Captura o ID do produto da URL
         const urlParams = new URLSearchParams(window.location.search);
-        const produtoId = urlParams.get('produto');
+        const produtoId = urlParams.get(productId);
 
         // Atualiza o conteúdo da página com base no produto
         if (produtoId && produtos[produtoId]) {

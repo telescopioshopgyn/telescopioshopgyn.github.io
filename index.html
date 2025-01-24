@@ -41,7 +41,7 @@
                             <p>Viva a experiência de obter imagens espaciais inesquecíveis de alta qualidade com este Telescópio Greika MAK90 Cassegrain Maksutov.</p>
                             <div class="preco-antigo">R$ 3.529,76</div>
                             <div class="preco">R$ 2.529,76</div>
-                            <button class="btn-compra" onclick="openProductPage('produto01')">Comprar</button>
+                            <button class="btn-compra" onclick="openProductPage('produto1')">Comprar</button>
                         </div>
                     </div>
                     <!--Incio de um produto -->                
@@ -52,7 +52,7 @@
                             <p>Observe com detalhes planetas, sistema solar, eventos celestes e terrestres.</p>
                             <div class="preco-antigo">R$ 3.929,76</div>
                             <div class="preco">R$ 2.829,76</div>
-                            <button class="btn-compra" onclick="openProductPage('produto01')">Comprar</button>
+                            <button class="btn-compra" onclick="openProductPage('produto2')">Comprar</button>
                         </div>
                     </div>
                     <!--Incio de um produto -->                    
@@ -65,7 +65,7 @@
                                 céu e todos os eventos celestes e eclipses lunares solares.</p>
                             <div class="preco-antigo">R$ 4.529,76</div>
                             <div class="preco">R$ 3.229,76</div>
-                            <button class="btn-compra" onclick="openProductPage('produto01')">Comprar</button>
+                            <button class="btn-compra" onclick="openProductPage('produto3')">Comprar</button>
                         </div>
                     </div>
                     <!--Incio de um produto -->
@@ -76,7 +76,7 @@
                             <p>Telescópio Greika Refrator Azimutal 90060 com Ampliação até 675x para Observação Celeste e Terrestre.</p>
                             <div class="preco-antigo">R$ 1.789,76</div>
                             <div class="preco">R$ 1.229,99</div>
-                            <button class="btn-compra" onclick="openProductPage('produto01')">Comprar</button>
+                            <button class="btn-compra" onclick="openProductPage('produto4')">Comprar</button>
                         </div>
                     </div>
                     <!--Incio de um produto -->
@@ -87,7 +87,7 @@
                             <p>Telescópio apropriado para observação de pássaros, aves e objetos fixos. E mais além, a Lua e Constelações de Órion, Lyra e Vulpecula.</p>
                             <div class="preco-antigo">R$ 1.529,76</div>
                             <div class="preco">R$ 1.089,76</div>
-                            <button class="btn-compra" onclick="openProductPage('produto01')">Comprar</button>
+                            <button class="btn-compra" onclick="openProductPage('produto5')">Comprar</button>
                         </div>
                     </div>
                     <!--Incio de um produto -->
@@ -102,7 +102,7 @@
                                 excelente fator custo benefício.</p>
                             <div class="preco-antigo">R$ 629,76</div>
                             <div class="preco">R$ 489,76</div>
-                            <button class="btn-compra" onclick="openProductPage('produto01')">Comprar</button>
+                            <button class="btn-compra" onclick="openProductPage('produto6')">Comprar</button>
                         </div>
                     </div>
                     <div class="card-produto">
@@ -118,7 +118,7 @@
                                 Medidas (cm): 23x7.4x19.5</p>
                             <div class="preco-antigo">R$ 729,76</div>
                             <div class="preco">R$ 559,76</div>
-                            <button class="btn-compra" onclick="openProductPage('produto01')">Comprar</button>
+                            <button class="btn-compra" onclick="openProductPage('produto7')">Comprar</button>
                         </div>
                     </div>
                     <div class="card-produto">
@@ -129,7 +129,7 @@
                                 aglomerados estelares e até identifique algumas nebulosas.</p>
                             <div class="preco-antigo">R$ 529,76</div>
                             <div class="preco">R$ 369,76</div>
-                            <button class="btn-compra" onclick="openProductPage('produto01')">Comprar</button>
+                            <button class="btn-compra" onclick="openProductPage('produto8')">Comprar</button>
                         </div>
                     </div>
                     <div class="card-produto">
@@ -147,7 +147,7 @@
                                 Material: metal com armadura de borracha;.</p>
                             <div class="preco-antigo">R$ 399,76</div>
                             <div class="preco">R$ 285,76</div>
-                            <button class="btn-compra" onclick="openProductPage('produto01')">Comprar</button>
+                            <button class="btn-compra" onclick="openProductPage('produto9')">Comprar</button>
                         </div>
                     </div>
                     <!-- Adicione mais produtos aqui -->
@@ -167,8 +167,26 @@
     </main>
 
     <!-- Rodapé -->
-    <footer class="bg-dark text-white text-center py-3">
+    <footer class="bg-dark text-white text-center py-3 d-flex flex-wrap justify-content-between">
         <p>© 2025 Telescopio Shop Gym. Todos os direitos reservados.</p>
+        <div>
+            <div class="contact-info">
+                <p>Email: contato@exemplo.com</p>
+                <p>Telefone: (11) 1234-5678</p>
+                <p>Endereço: Rua Exemplo, 123 - São Paulo, SP</p>
+            </div>
+            <div class="social-media">
+                <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
+            <div class="payment-info">
+                <img src="./icons/visa.png" alt="Visa">
+                <img src="./icons/mastercard.png" alt="Mastercard">
+                <img src="./icons/paypal.png" alt="PayPal">
+            </div>
+            
+        </div>
     </footer>
 
     <!--<script>
@@ -179,23 +197,13 @@
     -->
 
     <script>
-        function openProductPage(productId) {
-            // Define um mapeamento de IDs de produtos para URLs de páginas
-            const productPages = {
-                'produto1': './pages/detalhes-produto01.html',
-                'produto2': './pages/detalhes-produto02.html',
-                'produto3': './pages/detalhes-produto03.html',
-            };
-    
-            // Verifica se o ID do produto existe no mapeamento
-            if (productPages[productId]) {
-                // Redireciona para a página correspondente
-                window.location.href = productPages[productId];
-            } else {
-                // Caso o ID não seja válido, redirecione para uma página de erro ou exiba uma mensagem
-                alert('Produto não encontrado!');
-            }
-        }
+
+    function openProductPage(productId) {
+        // Aqui você redireciona para uma página específica ou exibe uma mensagem
+        const productPageUrl = `./pages/detalhes-${productId}.html`; // Exemplo de caminho para a página do produto
+        window.location.href = productPageUrl;
+    }
+
     </script>
     
 </body>
