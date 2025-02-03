@@ -182,7 +182,7 @@ section p {
 /* Rodapé */
 /* Footer Styles */
 footer {
-    background-color: #333; /* Cor de fundo do footer */
+    background: linear-gradient(to right, #ae2896, #509bf5); /* Cor de fundo do footer */
     color: #fff; /* Cor da fonte */
     padding: 20px;
     display: flex;
