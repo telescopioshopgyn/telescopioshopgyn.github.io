@@ -4,7 +4,8 @@ body {
     font-weight: 400;
     font-style: normal;
     font-variation-settings: "wdth" 100;
-    background-color: #f4f4f4; /* Leve tom de cinza para destacar o conteúdo */
+    background-color: #f4f4f4;
+    /* Leve tom de cinza para destacar o conteúdo */
     margin: 0;
     padding: 20px;
 }
@@ -27,7 +28,8 @@ body {
     max-width: 300px;
     max-height: 300px;
     border-radius: 10px;
-    object-fit: cover; /* Mantém a proporção da imagem */
+    object-fit: cover;
+    /* Mantém a proporção da imagem */
     border: 1px solid #ddd;
 }
 
@@ -85,14 +87,16 @@ body {
 
 /* Estilo específico para o botão do WhatsApp */
 .botoes .whatsapp-btn {
-    background-color: #25D366; /* Cor oficial do WhatsApp */
+    background-color: #25D366;
+    /* Cor oficial do WhatsApp */
 }
 
 /* Efeito Hover */
 .botoes button:hover,
 .botoes a:hover {
     background-color: #0056b3;
-    transform: scale(1.05); /* Leve aumento ao passar o mouse */
+    transform: scale(1.05);
+    /* Leve aumento ao passar o mouse */
 }
 
 .botoes .whatsapp-btn:hover {
@@ -149,59 +153,150 @@ body {
 /* Rodapé */
 /* Footer Styles */
 footer {
-    background: linear-gradient(to right, #ae2896, #509bf5); /* Cor de fundo do footer */
-    color: #fff; /* Cor da fonte */
+    background: linear-gradient(to right, #ae2896, #509bf5);
+    /* Cor de fundo do footer */
+    color: #fff;
+    /* Cor da fonte */
     padding: 20px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between; /* Espaçamento entre os elementos da esquerda e da direita */
-  }
-  
-  footer p {
+    justify-content: space-between;
+    /* Espaçamento entre os elementos da esquerda e da direita */
+}
+
+footer p {
     font-size: 1rem;
     margin: 0;
-    display: inline; /* Torna o footer um contêiner de posicionamento */
-  }
-  
-  /* Informações de contato */
-  .contact-info {
-    justify-content: flex-start; /* Alinha os itens à esquerda */
-    flex-direction: column; /* Organiza os elementos em uma coluna */
-    margin-bottom: 10px; /* Espaçamento abaixo do bloco de contato */
-  }
-  
-  .contact-info p {
-    margin-bottom: 5px; /* Espaçamento entre as informações de contato */
-  }
-  
-  /* Redes Sociais */
-  .social-media {
+    display: inline;
+    /* Torna o footer um contêiner de posicionamento */
+}
+
+/* Informações de contato */
+.contact-info {
+    justify-content: flex-start;
+    /* Alinha os itens à esquerda */
+    flex-direction: column;
+    /* Organiza os elementos em uma coluna */
+    margin-bottom: 10px;
+    /* Espaçamento abaixo do bloco de contato */
+}
+
+.contact-info p {
+    margin-bottom: 5px;
+    /* Espaçamento entre as informações de contato */
+}
+
+/* Redes Sociais */
+.social-media {
     display: flex;
-    justify-content: center; /* Centraliza os ícones */
-    margin-bottom: 10px; /* Espaçamento abaixo do bloco de redes sociais */
-  }
-  
-  .social-media a {
-    color: #fff; /* Define a cor dos ícones */
-    text-decoration: none; /* Remove o sublinhado dos links */
-    margin: 0 5px; /* Espaçamento entre os ícones */
-  }
-  
-  /* Formas de Pagamento */
-  .payment-info {
+    justify-content: center;
+    /* Centraliza os ícones */
+    margin-bottom: 10px;
+    /* Espaçamento abaixo do bloco de redes sociais */
+}
+
+.social-media a {
+    color: #fff;
+    /* Define a cor dos ícones */
+    text-decoration: none;
+    /* Remove o sublinhado dos links */
+    margin: 0 5px;
+    /* Espaçamento entre os ícones */
+}
+
+/* Formas de Pagamento */
+.payment-info {
     display: flex;
-    justify-content: flex-end; /* Alinha os ícones de pagamento à direita */
-    margin-bottom: 10px; /* Espaçamento abaixo do bloco de formas de pagamento */
-  }
-  
-  .payment-img {
-    width: 30px; /* Ajuste o tamanho conforme necessário */
+    justify-content: flex-end;
+    /* Alinha os ícones de pagamento à direita */
+    margin-bottom: 10px;
+    /* Espaçamento abaixo do bloco de formas de pagamento */
+}
+
+.payment-img {
+    width: 30px;
+    /* Ajuste o tamanho conforme necessário */
     height: auto;
     margin: 0 5px;
-  }
-  
-  /* Copyright */
-  .copyright {
-    justify-content: flex-start; /* Alinha o copyright à esquerda */
-    text-align: left; /* Alinha o texto do copyright à esquerda */
-  }
+}
+
+/* Copyright */
+.copyright {
+    justify-content: flex-start;
+    /* Alinha o copyright à esquerda */
+    text-align: left;
+    /* Alinha o texto do copyright à esquerda */
+}
+
+/* Estilos para telas menores (ex: celulares) */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .produto-detalhes {
+        flex-direction: column;
+        /* Muda para coluna */
+        align-items: center;
+        text-align: center;
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    #produto-imagem {
+        max-width: 80%;
+        height: auto;
+    }
+
+    .caixa-info {
+        width: 100%;
+        padding: 15px;
+    }
+
+    #produto-descricao {
+        font-size: 16px;
+        /* Aumenta um pouco o tamanho da fonte */
+        line-height: 1.5;
+        text-align: justify;
+    }
+
+    .botoes {
+        flex-direction:row;
+        /* Alinha os botões em coluna */
+    }
+
+    .botoes button,
+    .botoes a {
+        width: 100%;
+        font-size: 15px;
+        padding: 10px;
+    }
+
+    .galeria {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .galeria img {
+        max-width: 80%;
+        max-height: auto;
+    }
+
+    .video-container iframe {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        /* Mantém a proporção do vídeo */
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .contact-info,
+    .social-media,
+    .payment-info {
+        margin-bottom: 10px;
+    }
+}
