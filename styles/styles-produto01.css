@@ -229,7 +229,7 @@ footer p {
 }
 
 /* Estilos para telas menores (ex: celulares) */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 568px) {
     body {
         padding: 10px;
     }
