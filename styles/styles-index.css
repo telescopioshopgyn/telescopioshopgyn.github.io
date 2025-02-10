@@ -1,5 +1,19 @@
+:root {
+    --cor-base: #fafaff;
+    --cor-rosa: #AA41FA;
+    --cor-azul: #34a6d3;
+    --cor-marinho: #4150FA;
+    --cor-roxo: #6E41FA;
+    --cor-azul-morinho: #005ce6;
+    --cor-verde: #42c505;
+    --cor-preta: #000;
+    --tamanho-fonte: 16px;
+    --peso-fonte: 12px;
+}
+
 /* Estilo Geral */
 body {
+    background-color: var(--cor-base);
     font-family: 'Roboto', sans-serif;  /* Usa a fonte Roboto */
     font-weight: 400;  /* Peso normal */
     font-style: normal;  /* Estilo normal */
@@ -40,7 +54,7 @@ header {
     background-size: cover;
     background-position: center;
     background-attachment: fixed; /* Para a imagem ficar fixa ao rolar a página */
-    filter: grayscale(20%); /* Aplica um tom de cinza na imagem */
+    filter: grayscale(30%); /* Aplica um tom de cinza na imagem */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Sombra no texto para melhorar a legibilidade */
     padding: 80px 0;
     text-align: center;
@@ -50,28 +64,35 @@ header {
 header h1 {
     font-size: 3.5rem;
     margin-bottom: 20px;
-    color: white;
+    color: var(--cor-base);
 }
 
 header p {
     font-size: 1.25rem;
+    color: var(--cor-base);
+}
+
+header p strong{
+    font-size: 1.25rem;
+    color: var(--cor-azul);
 }
 
 /* Seções */
 section {
     margin: 50px 0;
-    background-color: #fff;
+    background-color:var(--cor-base);
 
 }
 
 section h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
+    color: var(--cor-azul);
 }
 
 section p {
     font-size: 1.125rem;
-    color: #555;
+    color: var(--cor-preta);
 }
 
 /* Container do Grid */
@@ -84,7 +105,7 @@ section p {
 
 /* Estilo do Card */
 .card-produto {
-    background-color: #fff;
+    background-color: var(--cor-base);
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
@@ -110,10 +131,10 @@ section p {
 }-->
 */
 .card-produto img {
-    width: 90%; /* Define a largura como 90% da largura do card */
-    height: auto; /* Mantém a proporção da imagem */
-    margin: 0 auto; /* Centraliza a imagem dentro do card */
-    display: block; /* Garante que a imagem seja tratada como bloco */
+    width: 60%; /* Define a largura como 90% da largura do card */
+    height:auto; /* Mantém a proporção da imagem */
+    margin: auto; /* Centraliza a imagem dentro do card */
+    display: flex; /* Garante que a imagem seja tratada como bloco */
     border-radius: 8px; /* (Opcional) Deixa as bordas arredondadas para um estilo mais moderno */
 }
 
@@ -122,14 +143,14 @@ section p {
 .card-produto .info {
     padding: 15px;
     font-size: 1.2em;
-    color: #333;
+    color: var(--cor-preta);
     margin-top: auto;
 }
 
 .card-produto .descricao {
     padding: 15px;
     font-size: 1.2em;
-    color: #333;
+    color: var(--cor-preta);
     margin-bottom: 10px;
 }
 
@@ -137,7 +158,7 @@ section p {
 
 .card-produto p {
     font-size: 0.7em;
-    color: #666;
+    color: var(--cor-preta);
     margin-bottom: 15px;
 }
 
@@ -145,13 +166,13 @@ section p {
 .card-produto .preco {
     font-size: 1.1em;
     font-weight: bold;
-    color: #34a300; /* Cor destacada para o preço */
+    color: var(--cir-azul-morinho); /* Cor destacada para o preço */
     font-size: 20px; /* Tamanho do texto maior para destaque */
     
 }
 /* Estilo para o preço antigo */
 .preco-antigo {
-    color: red; /* Cor destacada */
+    color: rgb(168, 0, 0); /* Cor destacada */
     text-decoration: line-through; /* Risco de cartado */
     font-size: 16px; /* Tamanho do texto */
     margin-bottom: 5px; /* Espaço abaixo do preço */
@@ -163,8 +184,8 @@ section p {
     display: block;
     width: 100%;
     padding: 10px;
-    background-color: #34a300;
-    color: white;
+    background-color: var(--cor-roxo);
+    color: var(--cor-base);
     text-align: center;
     border: none;
     border-radius: 5px;
@@ -175,15 +196,15 @@ section p {
 }
 
 .card-produto .btn-compra:hover {
-    background-color: #34a300;
+    background-color: var(--cor-verde);
 }
 
 
 /* Rodapé */
 /* Footer Styles */
 footer {
-    background: linear-gradient(to right, #ae2896, #509bf5); /* Cor de fundo do footer */
-    color: #fff; /* Cor da fonte */
+    background: linear-gradient(to right, var(--cor-rosa), var(--cor-marinho)); /* Cor de fundo do footer */
+    color: var(--cor-base); /* Cor da fonte */
     padding: 20px;
     display: flex;
     flex-wrap: wrap;
@@ -215,7 +236,7 @@ footer {
   }
   
   .social-media a {
-    color: #fff; /* Define a cor dos ícones */
+    color: var(--cor-base); /* Define a cor dos ícones */
     text-decoration: none; /* Remove o sublinhado dos links */
     margin: 0 5px; /* Espaçamento entre os ícones */
   }

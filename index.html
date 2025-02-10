@@ -15,171 +15,182 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
-    <!-- Tema Cerulean do Bootswatch -->
-    <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/cerulean/bootstrap.min.css" rel="stylesheet">
-    <!-- Script do JavaScript do Bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
 </head>
 
 <body>
-    <!-- Cabeçalho -->
-    <header class="custom-header text-white text-center py-5">
-        <div class="overlay"></div> <!-- Div com o fundo transparente -->
-        <div class="container">
-            <h1 class="display-4">Bem-vindo à Telescopio Shop Gym</h1>
-            <p class="lead">Explore o universo com nossos equipamentos astronômicos de alta qualidade.</p>
-        </div>
-    </header>
-
-
-
-    <!-- Seção Nossos Produtos -->
-    <section>
-        <h2 class="text-center text-primary">Nossos Produtos</h2>
-        <div class="container mt-4">
-            <div class="row text-center">
-                
-                <div class="container-produtos">
-                    <!--PRODUTO 01 -->
-                    <div class="card-produto">
-                        <img src="./produtos/TELESCOPIOS-REFRA/GREIKA MAK90.png" alt="Produto 1">
-                        <div class="info">
-                            <h2 class="descricao">Telescópio Greika MAK90 Cassegrain Maksutov</h2>
-                            <p>Viva a experiência de obter imagens espaciais inesquecíveis de alta qualidade com este
-                                Telescópio Greika MAK90 Cassegrain Maksutov.</p>
-                            <div class="preco-antigo">R$ 3.529,76</div>
-                            <div class="preco">R$ 2.529,76</div>
-                            <button class="btn-compra" onclick="openProductPage('produto1')">Comprar</button>
-                        </div>
-                    </div>
-                    <!--PRODUTO 02 -->
-                    <div class="card-produto">
-                        <img src="./produtos/TELESCOPIO-REFLE/GREIKA_REFLETOR_1000*114/Telescópio Greika 1000114 Equatorial Newtoniano.png"
-                            alt="Produto 1">
-                        <div class="info">
-                            <h2 class="descricao">Telescópio Greika 1000114 Equatorial Newtoniano</h2>
-                            <p>Observe com detalhes planetas, sistema solar, eventos celestes e terrestres.</p>
-                            <div class="preco-antigo">R$ 3.929,76</div>
-                            <div class="preco">R$ 2.829,76</div>
-                            <button class="btn-compra" onclick="openProductPage('produto2')">Comprar</button>
-                        </div>
-                    </div>
-                    <!--PRODUTO 03 -->
-                    <div class="card-produto">
-                        <img src="./produtos/TELESCOPIO-REFLE/GREIKA_REFLETOR_1400150/Telescópio Greika 1400150 Equatorial Newtoniano.png"
-                            alt="Produto 1">
-                        <div class="info">
-                            <h2 class="descricao">Telescópio Greika 1400150 Equatorial Newtoniano</h2>
-                            <p>Observação detalhada do sistema solar e eventos solares é possível
-                                observar o espetáculo da movimentação das estrelas no
-                                céu e todos os eventos celestes e eclipses lunares solares.</p>
-                            <div class="preco-antigo">R$ 4.529,76</div>
-                            <div class="preco">R$ 3.229,76</div>
-                            <button class="btn-compra" onclick="openProductPage('produto3')">Comprar</button>
-                        </div>
-                    </div>
-                    <!--PRODUTO 04-->
-                    <div class="card-produto">
-                        <img src="./produtos/TELESCOPIOS-REFRA/900_60_greika/Telescópio Greika 90060 Refrator Azimutal.png"
-                            alt="Produto 1">
-                        <div class="info">
-                            <h2 class="descricao">Telescópio Greika 90060 Refrator Azimutal</h2>
-                            <p>Telescópio Greika Refrator Azimutal 90060 com Ampliação até 675x para Observação Celeste
-                                e Terrestre.</p>
-                            <div class="preco-antigo">R$ 2.089,76</div>
-                            <div class="preco">R$ 1.429,99</div>
-                            <button class="btn-compra" onclick="openProductPage('produto4')">Comprar</button>
-                        </div>
-                    </div>
-                    <!--PRODUTO 05 -->
-                    <div class="card-produto">
-                        <img src="./produtos/TELESCOPIOS-REFRA//700_70_greika/Telescópio Greika 70070 Refrator Azimutal.png"
-                            alt="Produto 1">
-                        <div class="info">
-                            <h2 class="descricao">Telescópio Greika 70070 Refrator Azimutal</h2>
-                            <p>Telescópio apropriado para observação de pássaros, aves e objetos fixos. E mais além, a
-                                Lua e Constelações de Órion, Lyra e Vulpecula.</p>
-                            <div class="preco-antigo">R$ 2.529,76</div>
-                            <div class="preco">R$ 1.289,76</div>
-                            <button class="btn-compra" onclick="openProductPage('produto5')">Comprar</button>
-                        </div>
-                    </div>
-                    <!--PRODUTO 06 -->
-                    <div class="card-produto">
-                        <img src="./produtos/TELESCOPIOS-REFRA/Refrator Azimutal  BM36060D.png" alt="Produto 1">
-                        <div class="info">
-                            <h2 class="descricao">Telescópio BM36060D Greika</h2>
-                            <p>O MAIS COMPACTO! Um equipamento leve de nova geração, compacto, especialmente
-                                projetado para permitir que um modelo econômico possa concentrar
-                                grande entrada de luz proporcionando assim visualizações celestiais
-                                e terrestres de qualidade superior, preservando ainda um
-                                excelente fator custo benefício.</p>
-                            <div class="preco-antigo">R$ 689,76</div>
-                            <div class="preco">R$ 559,96</div>
-                            <button class="btn-compra" onclick="openProductPage('produto6')">Comprar</button>
-                        </div>
-                    </div>
-                    <!--PRODUTO 07 -->
-                    <div class="card-produto">
-                        <img src="./produtos/BINOCULOS/BINOCULOREF.: BI 10X40-60.png" alt="Produto 1">
-                        <div class="info">
-                            <h2 class="descricao">Binóculo Greika 10-40x60</h2>
-                            <p>Ampliação: 10 a 40 xDiâmetro objetiva (mm): 60
-                                Sistema de foco: Central c/Zoom
-                                Construção: Prisma Porro Bak4 X-Vision
-                                Revestimento de lente: UV multirevestidas AzuisEscala visual em 1000m
-                                (m): 60 em 10x
-                                Saída de pupila: 6mm em 10xPeso (gr): 1.045
-                                Medidas (cm): 23x7.4x19.5</p>
-                            <div class="preco-antigo">R$ 729,76</div>
-                            <div class="preco">R$ 559,76</div>
-                            <button class="btn-compra" onclick="openProductPage('produto7')">Comprar</button>
-                        </div>
-                    </div>
-                    <!--PRODUTO 08 -->
-                    <div class="card-produto">
-                        <img src="./produtos/BINOCULOS/Binóculos Greika 10x50 com Bolsa.png" alt="Produto 1">
-                        <div class="info">
-                            <h2 class="descricao">Binóculos Greika 10x50 com Bolsa</h2>
-                            <p>Observe as crateras da Lua ou estrelas duplas,
-                                aglomerados estelares e até identifique algumas nebulosas.</p>
-                            <div class="preco-antigo">R$ 429,76</div>
-                            <div class="preco">R$ 349,98</div>
-                            <button class="btn-compra" onclick="openProductPage('produto8')">Comprar</button>
-                        </div>
-                    </div>
-                    <!--PRODUTO 09 -->
-                    <div class="card-produto">
-                        <img src="./produtos/BINOCULOS/binoculos 10x25.jpg" alt="Produto 1">
-                        <div class="info">
-                            <h2 class="descricao">BINÓCULO 10x25</h2>
-                            <p>Corpo emborrachado;
-                                Ampliação: 10x;
-                                Campo de visão: 5.6;
-                                Objetiva: 25mm;
-                                Saída pupilar: 2.5mm;
-                                Distância saída pupilar: 10mm;
-                                Acompanha: bolsa exclusiva, alça e lenço para limpeza;
-                                Lentes: multicoat ruby;
-                                Material: metal com armadura de borracha;.</p>
-                            <div class="preco-antigo">R$ 399,76</div>
-                            <div class="preco">R$ 269,98</div>
-                            <button class="btn-compra" onclick="openProductPage('produto9')">Comprar</button>
-                        </div>
-                    </div>
-                    <!-- Adicione mais produtos aqui -->
-                </div>
-
-    </section>
-
     <!-- Conteúdo Principal -->
     <main class="container my-5">
+        <!-- Cabeçalho -->
+        <header class="custom-header text-white text-center py-5">
+            <div class="overlay"></div> <!-- Div com o fundo transparente -->
+            <div class="container">
+                <h1 class="display-4">Bem-vindo à Telescopio Shop Gym</h1>
+                <p class="lead">Explore o universo com nossos equipamentos astronômicos de <strong>alta qualidade</strong> .</p>
+            </div>
+        </header>
+
+
+        <!-- Seção Nossos Produtos -->
+        <section>
+            <h2 class="text-center text-primary">Nossos Produtos</h2>
+            <div class="container mt-4">
+                <div class="row text-center">
+
+                    <div class="container-produtos">
+                        <!--PRODUTO 01 -->
+                        <div class="card-produto">
+                            <img src="./produtos/TELESCOPIOS-REFRA/GREIKA MAK90.png" alt="Produto 1">
+                            <div class="info">
+                                <h2 class="descricao">Telescópio Greika MAK90 Cassegrain Maksutov</h2>
+                                <p>Viva a experiência de obter imagens espaciais inesquecíveis de alta qualidade com
+                                    este
+                                    Telescópio Greika MAK90 Cassegrain Maksutov.</p>
+                                <div class="preco-antigo">R$ 3.529,76</div>
+                                <div class="preco">R$ 2.529,76</div>
+                                <button class="btn-compra" onclick="openProductPage('produto1')">Comprar</button>
+                            </div>
+                        </div>
+                        <!--PRODUTO 02 -->
+                        <div class="card-produto">
+                            <img src="./produtos/TELESCOPIO-REFLE/GREIKA_REFLETOR_1000*114/Telescópio Greika 1000114 Equatorial Newtoniano.png"
+                                alt="Produto 1">
+                            <div class="info">
+                                <h2 class="descricao">Telescópio Greika 1000114 Equatorial Newtoniano</h2>
+                                <p>Observe com detalhes planetas, sistema solar, eventos celestes e terrestres.</p>
+                                <div class="preco-antigo">R$ 3.929,76</div>
+                                <div class="preco">R$ 2.829,76</div>
+                                <button class="btn-compra" onclick="openProductPage('produto2')">Comprar</button>
+                            </div>
+                        </div>
+                        <!--PRODUTO 03 -->
+                        <div class="card-produto">
+                            <img src="./produtos/TELESCOPIO-REFLE/GREIKA_REFLETOR_1400150/Telescópio Greika 1400150 Equatorial Newtoniano.png"
+                                alt="Produto 1">
+                            <div class="info">
+                                <h2 class="descricao">Telescópio Greika 1400150 Equatorial Newtoniano</h2>
+                                <p>Observação detalhada do sistema solar e eventos solares é possível
+                                    observar o espetáculo da movimentação das estrelas no
+                                    céu e todos os eventos celestes e eclipses lunares solares.</p>
+                                <div class="preco-antigo">R$ 4.529,76</div>
+                                <div class="preco">R$ 3.229,76</div>
+                                <button class="btn-compra" onclick="openProductPage('produto3')">Comprar</button>
+                            </div>
+                        </div>
+                        <!--PRODUTO 04-->
+                        <div class="card-produto">
+                            <img src="./produtos/TELESCOPIOS-REFRA/900_60_greika/Telescópio Greika 90060 Refrator Azimutal.png"
+                                alt="Produto 1">
+                            <div class="info">
+                                <h2 class="descricao">Telescópio Greika 90060 Refrator Azimutal</h2>
+                                <p>Telescópio Greika Refrator Azimutal 90060 com Ampliação até 675x para Observação
+                                    Celeste
+                                    e Terrestre.</p>
+                                <div class="preco-antigo">R$ 2.089,76</div>
+                                <div class="preco">R$ 1.429,99</div>
+                                <button class="btn-compra" onclick="openProductPage('produto4')">Comprar</button>
+                            </div>
+                        </div>
+                        <!--PRODUTO 05 -->
+                        <div class="card-produto">
+                            <img src="./produtos/TELESCOPIOS-REFRA//700_70_greika/Telescópio Greika 70070 Refrator Azimutal.png"
+                                alt="Produto 1">
+                            <div class="info">
+                                <h2 class="descricao">Telescópio Greika 70070 Refrator Azimutal</h2>
+                                <p>Telescópio apropriado para observação de pássaros, aves e objetos fixos. E mais além,
+                                    a
+                                    Lua e Constelações de Órion, Lyra e Vulpecula.</p>
+                                <div class="preco-antigo">R$ 2.529,76</div>
+                                <div class="preco">R$ 1.289,76</div>
+                                <button class="btn-compra" onclick="openProductPage('produto5')">Comprar</button>
+                            </div>
+                        </div>
+                        <!--PRODUTO 06 -->
+                        <div class="card-produto">
+                            <img src="./produtos/TELESCOPIOS-REFRA/Refrator Azimutal  BM36060D.png" alt="Produto 1">
+                            <div class="info">
+                                <h2 class="descricao">Telescópio BM36060D Greika</h2>
+                                <p>O MAIS COMPACTO! Um equipamento leve de nova geração, compacto, especialmente
+                                    projetado para permitir que um modelo econômico possa concentrar
+                                    grande entrada de luz proporcionando assim visualizações celestiais
+                                    e terrestres de qualidade superior, preservando ainda um
+                                    excelente fator custo benefício.</p>
+                                <div class="preco-antigo">R$ 689,76</div>
+                                <div class="preco">R$ 559,96</div>
+                                <button class="btn-compra" onclick="openProductPage('produto6')">Comprar</button>
+                            </div>
+                        </div>
+                        <!--PRODUTO 07 -->
+                        <div class="card-produto">
+                            <img src="./produtos/BINOCULOS/BINOCULOREF.: BI 10X40-60.png" alt="Produto 1">
+                            <div class="info">
+                                <h2 class="descricao">Binóculo Greika 10-40x60</h2>
+                                <p>Ampliação: 10 a 40 xDiâmetro objetiva (mm): 60
+                                    Sistema de foco: Central c/Zoom
+                                    Construção: Prisma Porro Bak4 X-Vision
+                                    Revestimento de lente: UV multirevestidas AzuisEscala visual em 1000m
+                                    (m): 60 em 10x
+                                    Saída de pupila: 6mm em 10xPeso (gr): 1.045
+                                    Medidas (cm): 23x7.4x19.5</p>
+                                <div class="preco-antigo">R$ 729,76</div>
+                                <div class="preco">R$ 559,76</div>
+                                <button class="btn-compra" onclick="openProductPage('produto7')">Comprar</button>
+                            </div>
+                        </div>
+                        <!--PRODUTO 08 -->
+                        <div class="card-produto">
+                            <img src="./produtos/BINOCULOS/Binóculos Greika 10x50 com Bolsa.png" alt="Produto 1">
+                            <div class="info">
+                                <h2 class="descricao">Binóculos Greika 10x50 com Bolsa</h2>
+                                <p>Observe as crateras da Lua ou estrelas duplas,
+                                    aglomerados estelares e até identifique algumas nebulosas.</p>
+                                <div class="preco-antigo">R$ 429,76</div>
+                                <div class="preco">R$ 349,98</div>
+                                <button class="btn-compra" onclick="openProductPage('produto8')">Comprar</button>
+                            </div>
+                        </div>
+                        <!--PRODUTO 09 -->
+                        <div class="card-produto">
+                            <img src="./produtos/BINOCULOS/binoculos 10x25.jpg" alt="Produto 1">
+                            <div class="info">
+                                <h2 class="descricao">BINÓCULO 10x25</h2>
+                                <p>Corpo emborrachado;
+                                    Ampliação: 10x;
+                                    Campo de visão: 5.6;
+                                    Objetiva: 25mm;
+                                    Saída pupilar: 2.5mm;
+                                    Distância saída pupilar: 10mm;
+                                    Acompanha: bolsa exclusiva, alça e lenço para limpeza;
+                                    Lentes: multicoat ruby;
+                                    Material: metal com armadura de borracha;.</p>
+                                <div class="preco-antigo">R$ 399,76</div>
+                                <div class="preco">R$ 269,98</div>
+                                <button class="btn-compra" onclick="openProductPage('produto9')">Comprar</button>
+                            </div>
+                        </div>
+                        <!-- Adicione mais produtos aqui -->
+                    </div>
+
+        </section>
         <!-- Seção Sobre Nós -->
         <section class="mb-5">
             <h2 class="text-center text-primary">Sobre Nós</h2>
             <p class="text-center">
-                Somos apaixonados pelo universo e comprometidos em trazer os melhores telescópios e acessórios
-                astronômicos para todos os exploradores do cosmos.
+
+                Na Telescopio Shop Gyn, acreditamos que explorar o universo é mais do que um hobby—é uma jornada de
+                descobertas. Nossa missão é tornar essa experiência acessível para todos, fornecendo equipamentos
+                astronômicos de alta qualidade que permitem observar o cosmos com clareza e precisão.
+
+                Com uma seleção criteriosa de telescópios, binóculos e acessórios, ajudamos desde iniciantes até
+                astrônomos experientes a alcançar novas fronteiras no céu. Trabalhamos com compromisso, paixão e
+                conhecimento para oferecer não apenas produtos excepcionais, mas também um atendimento dedicado e
+                confiável.
+
+                Queremos que cada olhar para o céu seja uma inspiração. Por isso, estamos aqui para guiar você na
+                escolha do equipamento ideal, tornando sua experiência astronômica inesquecível.
+
+                Telescopio Shop Gyn – O universo ao seu alcance.
+
+                Se precisar de ajustes para combinar melhor com o tom da sua marca, é só me avisar!
             </p>
         </section>
     </main>
