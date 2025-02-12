@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    top: 0;
+    bottom: 0;
+
+}
 :root {
     --cor-base: #fafaff;
     --cor-rosa: #AA41FA;
