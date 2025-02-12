@@ -4,6 +4,7 @@
     bottom: 0;
 
 }
+
 :root {
     --cor-base: #fafaff;
     --cor-rosa: #AA41FA;
@@ -20,16 +21,23 @@
 /* Estilo Geral */
 body {
     background-color: var(--cor-base);
-    font-family: 'Roboto', sans-serif;  /* Usa a fonte Roboto */
-    font-weight: 400;  /* Peso normal */
-    font-style: normal;  /* Estilo normal */
-    font-variation-settings: "wdth" 100;  /* Largura normal, se a fonte suportar */
+    font-family: 'Roboto', sans-serif;
+    /* Usa a fonte Roboto */
+    font-weight: 400;
+    /* Peso normal */
+    font-style: normal;
+    /* Estilo normal */
+    font-variation-settings: "wdth" 100;
+    /* Largura normal, se a fonte suportar */
 }
 
 h1 {
-    font-family: 'Nunito', sans-serif;  /* Usa a fonte Nunito */
-    font-weight: 700;  /* Peso mais grosso */
-    font-style: italic;  /* Estilo itálico */
+    font-family: 'Nunito', sans-serif;
+    /* Usa a fonte Nunito */
+    font-weight: 700;
+    /* Peso mais grosso */
+    font-style: italic;
+    /* Estilo itálico */
 }
 
 
@@ -40,14 +48,17 @@ h1 {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.4); /* Cor preta com 20% de opacidade */
-    z-index: -1; /* Coloca o overlay atrás do conteúdo */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Cor preta com 20% de opacidade */
+    z-index: -1;
+    /* Coloca o overlay atrás do conteúdo */
 }
 
 
 /* Cabeçalho */
 header {
-    position: relative; /* Necessário para o overlay ficar atrás do conteúdo */
+    position: relative;
+    /* Necessário para o overlay ficar atrás do conteúdo */
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -59,12 +70,16 @@ header {
     background-image: url('../background/1920x1080.jpg');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* Para a imagem ficar fixa ao rolar a página */
-    filter: grayscale(30%); /* Aplica um tom de cinza na imagem */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Sombra no texto para melhorar a legibilidade */
+    background-attachment: fixed;
+    /* Para a imagem ficar fixa ao rolar a página */
+    filter: grayscale(30%);
+    /* Aplica um tom de cinza na imagem */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    /* Sombra no texto para melhorar a legibilidade */
     padding: 80px 0;
     text-align: center;
-    z-index: 1; /* Garante que o conteúdo fique acima do overlay */
+    z-index: 1;
+    /* Garante que o conteúdo fique acima do overlay */
 }
 
 header h1 {
@@ -78,7 +93,7 @@ header p {
     color: var(--cor-base);
 }
 
-header p strong{
+header p strong {
     font-size: 1.25rem;
     color: var(--cor-azul);
 }
@@ -86,7 +101,7 @@ header p strong{
 /* Seções */
 section {
     margin: 50px 0;
-    background-color:var(--cor-base);
+    background-color: var(--cor-base);
 
 }
 
@@ -124,7 +139,8 @@ section p {
 
 /* Efeito ao passar o mouse */
 .card-produto:hover {
-    transform: translateY(-15px); /* Eleva o card */
+    transform: translateY(-15px);
+    /* Eleva o card */
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
@@ -137,11 +153,16 @@ section p {
 }-->
 */
 .card-produto img {
-    width: 60%; /* Define a largura como 90% da largura do card */
-    height:auto; /* Mantém a proporção da imagem */
-    margin: auto; /* Centraliza a imagem dentro do card */
-    display: flex; /* Garante que a imagem seja tratada como bloco */
-    border-radius: 8px; /* (Opcional) Deixa as bordas arredondadas para um estilo mais moderno */
+    width: 60%;
+    /* Define a largura como 90% da largura do card */
+    height: auto;
+    /* Mantém a proporção da imagem */
+    margin: auto;
+    /* Centraliza a imagem dentro do card */
+    display: flex;
+    /* Garante que a imagem seja tratada como bloco */
+    border-radius: 8px;
+    /* (Opcional) Deixa as bordas arredondadas para um estilo mais moderno */
 }
 
 
@@ -172,17 +193,25 @@ section p {
 .card-produto .preco {
     font-size: 1.1em;
     font-weight: bold;
-    color: var(--cir-azul-morinho); /* Cor destacada para o preço */
-    font-size: 20px; /* Tamanho do texto maior para destaque */
-    
+    color: var(--cir-azul-morinho);
+    /* Cor destacada para o preço */
+    font-size: 20px;
+    /* Tamanho do texto maior para destaque */
+
 }
+
 /* Estilo para o preço antigo */
 .preco-antigo {
-    color: rgb(168, 0, 0); /* Cor destacada */
-    text-decoration: line-through; /* Risco de cartado */
-    font-size: 16px; /* Tamanho do texto */
-    margin-bottom: 5px; /* Espaço abaixo do preço */
-    font-size: 15px; /* Tamanho do texto maior para destaque */
+    color: rgb(168, 0, 0);
+    /* Cor destacada */
+    text-decoration: line-through;
+    /* Risco de cartado */
+    font-size: 16px;
+    /* Tamanho do texto */
+    margin-bottom: 5px;
+    /* Espaço abaixo do preço */
+    font-size: 15px;
+    /* Tamanho do texto maior para destaque */
 }
 
 /* Botão de Compra */
@@ -198,7 +227,7 @@ section p {
     text-transform: uppercase;
     font-weight: bold;
     transition: background-color 0.3s ease;
-    
+
 }
 
 .card-produto .btn-compra:hover {
@@ -209,62 +238,70 @@ section p {
 /* Rodapé */
 /* Footer Styles */
 footer {
-    background: linear-gradient(to right, var(--cor-rosa), var(--cor-marinho)); /* Cor de fundo do footer */
-    color: var(--cor-base); /* Cor da fonte */
-    padding: 20px;
+    background: linear-gradient(to right, var(--cor-rosa), var(--cor-marinho));
+    /* Cor de fundo do footer */
+    color: var(--cor-base);
+    /* Cor da fonte */
+    padding: 8px;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between; /* Espaçamento entre os elementos da esquerda e da direita */
-  }
-  
-  footer p {
-    font-size: 1rem;
-    margin: 0;
-    display: inline; /* Torna o footer um contêiner de posicionamento */
-  }
-  
-  /* Informações de contato */
-  .contact-info {
-    justify-content: flex-start; /* Alinha os itens à esquerda */
-    flex-direction: column; /* Organiza os elementos em uma coluna */
-    margin-bottom: 10px; /* Espaçamento abaixo do bloco de contato */
-  }
-  
-  .contact-info p {
-    margin-bottom: 5px; /* Espaçamento entre as informações de contato */
-  }
-  
-  /* Redes Sociais */
-  .social-media {
+    justify-content: space-between;
+    padding: 12px 10px;
+    /* Espaçamento entre os elementos da esquerda e da direita */
+}
+
+
+.contact-info p {
+    margin-bottom: 5px;
+    /* Espaçamento entre as informações de contato */
+}
+
+/* Redes Sociais */
+.social-media {
     display: flex;
-    justify-content: center; /* Centraliza os ícones */
-    margin-bottom: 10px; /* Espaçamento abaixo do bloco de redes sociais */
-  }
-  
-  .social-media a {
-    color: var(--cor-base); /* Define a cor dos ícones */
-    text-decoration: none; /* Remove o sublinhado dos links */
-    margin: 0 5px; /* Espaçamento entre os ícones */
-  }
-  
-  /* Formas de Pagamento */
-  .payment-info {
+    justify-content: center;
+    /* Centraliza os ícones */
+    margin-bottom: 10px;
+    /* Espaçamento abaixo do bloco de redes sociais */
+}
+
+.social-media a {
+    color: var(--cor-base);
+    /* Define a cor dos ícones */
+    text-decoration: none;
+    /* Remove o sublinhado dos links */
+    margin: 0 5px;
+    /* Espaçamento entre os ícones */
+}
+
+/* Formas de Pagamento */
+.payment-info {
     display: flex;
-    justify-content: flex-end; /* Alinha os ícones de pagamento à direita */
-    margin-bottom: 10px; /* Espaçamento abaixo do bloco de formas de pagamento */
-  }
-  
-  .payment-img {
-    width: 30px; /* Ajuste o tamanho conforme necessário */
+    justify-content: flex-end;
+    /* Alinha os ícones de pagamento à direita */
+    margin-bottom: 10px;
+    /* Espaçamento abaixo do bloco de formas de pagamento */
+}
+
+.payment-img {
+    width: 30px;
+    /* Ajuste o tamanho conforme necessário */
     height: auto;
     margin: 0 5px;
-  }
-  
-  /* Copyright */
-  .copyright {
-    justify-content: flex-start; /* Alinha o copyright à esquerda */
-    text-align: left; /* Alinha o texto do copyright à esquerda */
-  }
+}
+
+/* Copyright */
+.copyright {
+    display: flex;
+    align-items: end;
+    /* Alinha o copyright à esquerda */
+    text-align: left;
+    /* Alinha o texto do copyright à esquerda */
+}
+
+.media-pay {
+    display: flex;
+    flex-direction: column;
+}
 
 /* Ajustes para o Layout */
 .container {

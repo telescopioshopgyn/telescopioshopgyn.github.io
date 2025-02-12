@@ -2,7 +2,7 @@
     margin: 0;
     top: 0;
     bottom: 0;
-    
+    padding:0;    
 }
 :root {
     --cor-base: #fafaff;
@@ -24,8 +24,6 @@ body {
     font-variation-settings: "wdth" 100;
     background-color:var(--cor-base);
     /* Leve tom de cinza para destacar o conteúdo */
-    margin: 0;
-    padding: 20px;
 }
 
 /* Layout da Seção de Detalhes do Produto */
@@ -170,14 +168,14 @@ body {
 /* Rodapé */
 /* Footer Styles */
 footer {
-    background: linear-gradient(to right, var(--cor-rosa), var(--cor-azul-morinho));
+    background: linear-gradient(to right, var(--cor-rosa), var(--cor-marinho));
     /* Cor de fundo do footer */
     color: var(--cor-base);
     /* Cor da fonte */
-    padding: 20px;
+    padding: 8px;
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
+    padding: 12px 10px;
     /* Espaçamento entre os elementos da esquerda e da direita */
 }
 
@@ -239,7 +237,8 @@ footer p {
 
 /* Copyright */
 .copyright {
-    justify-content: flex-start;
+    display: flex;
+    align-items: end;
     /* Alinha o copyright à esquerda */
     text-align: left;
     /* Alinha o texto do copyright à esquerda */
