@@ -332,6 +332,9 @@ footer {
     .col-md-3 {
         flex: 1 1 48%;
     }
+    footer {
+       font-size: small;
+    }
 }
 
 @media (max-width: 576px) {
@@ -342,4 +345,7 @@ footer {
     .col-md-3 {
         flex: 1 1 100%;
     }
+    footer {
+        font-size: small;
+     }
 }
