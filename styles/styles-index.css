@@ -105,6 +105,12 @@ section {
 
 }
 
+section .text-primary{
+  margin: 8px;
+ padding: 8px;
+}
+
+
 section h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
@@ -303,10 +309,6 @@ footer {
     flex-direction: column;
 }
 
-/* Ajustes para o Layout */
-.container {
-    max-width: 1200px;
-}
 
 .row {
     display: flex;
@@ -318,6 +320,11 @@ footer {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
+}
+
+p.text-center {
+    padding: 8px;
+    margin: 8px;
 }
 
 @media (max-width: 768px) {
@@ -338,6 +345,16 @@ footer {
     .container {
         max-width: 1200px;
     }
+    p.text-center {
+        padding: 8px;
+        margin: 8px;
+    }
+    section .text-primary{
+        margin: 8px;
+       padding: 8px;
+      }
+
+
 }
 
 @media (max-width: 576px) {
@@ -354,4 +371,13 @@ footer {
      .container {
         max-width: 1200px;
     }
+    p.text-center {
+        padding: 8px;
+        margin: 8px;
+    }
+    section .text-primary{
+        margin: 8px;
+       padding: 8px;
+      }
+
 }
