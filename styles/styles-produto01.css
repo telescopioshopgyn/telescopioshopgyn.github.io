@@ -261,6 +261,8 @@ footer p {
         justify-items: center;
         padding: 15px 15px;
     }
+    
+ 
 
     .caixa-info {
         width: 100%;
@@ -291,8 +293,13 @@ footer p {
     }
 
     .galeria {
-        display: flex;
+        display: flex
+;
+        flex-wrap: nowrap;
+        align-content: center;
         flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
 
     }
 
