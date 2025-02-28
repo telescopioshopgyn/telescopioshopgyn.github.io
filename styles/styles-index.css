@@ -220,6 +220,38 @@ section p {
     /* Tamanho do texto maior para destaque */
 }
 
+.pronta-entrega {
+    color: var(--cor-verde);
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 5px 10px; /* Adiciona um espaçamento interno */
+    border: 2px solid var(--cor-verde); /* Adiciona uma borda sólida verde */
+    border-radius: 5px; /* Arredonda os cantos da borda */
+    display: inline-block; /* Faz com que a borda envolva o conteúdo */
+    font-size: medium;
+}
+.pronta-entrega i {
+    margin-right: 5px;
+    
+}
+
+.faca-pedido {
+    color: var(--cor-azul);
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 5px 10px; /* Adiciona um espaçamento interno */
+    border: 2px solid var(--cor-azul); /* Adiciona uma borda sólida verde */
+    border-radius: 5px; /* Arredonda os cantos da borda */
+    display: inline-block; /* Faz com que a borda envolva o conteúdo */
+    font-size: medium;
+}
+.faca-pedido i {
+    margin-right: 5px;
+    
+}
+
 /* Botão de Compra */
 .card-produto .btn-compra {
     display: block;
