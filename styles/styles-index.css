@@ -122,6 +122,11 @@ section p {
     color: var(--cor-preta);
 }
 
+section p strong {
+    font-size: 1.25rem;
+    color: var(--cor-azul);
+}
+
 /* Container do Grid */
 .container-produtos {
     display: grid;
