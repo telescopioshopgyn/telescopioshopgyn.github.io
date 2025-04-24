@@ -68,9 +68,9 @@ header {
 
 .custom-header {
     background-image: url('../background/zgdf.gif');
-    background-size:contain;
-    background-position:center;
-    background-attachment:scroll;
+    background-size: contain;
+    background-position: center;
+    background-attachment: scroll;
     /* Para a imagem ficar fixa ao rolar a página */
     filter: grayscale(30%);
     /* Aplica um tom de cinza na imagem */
@@ -370,7 +370,7 @@ footer {
     padding-left: 10px;
     padding-right: 10px;
     border-bottom-width: 10px;
-    
+
 }
 
 
@@ -392,6 +392,13 @@ p.text-center {
 }
 
 @media (max-width: 768px) {
+    .custom-header {
+        background-image: url('../background/SvCz.gif');
+        background-size: contain;
+        background-position: center;
+        background-attachment: scroll;
+    }
+
     header h1 {
         font-size: 2.5rem;
     }
@@ -426,6 +433,13 @@ p.text-center {
 }
 
 @media (max-width: 576px) {
+    .custom-header {
+        background-image: url('../background/SvCz.gif');
+        background-size:cover;
+        background-position: center;
+        background-attachment: scroll;
+    }
+
     header h1 {
         font-size: 2rem;
     }
