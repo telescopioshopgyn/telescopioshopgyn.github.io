@@ -67,10 +67,10 @@ header {
 }
 
 .custom-header {
-    background-image: url('../background/1920x1080.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    background-image: url('../background/zgdf.gif');
+    background-size:contain;
+    background-position:center;
+    background-attachment:scroll;
     /* Para a imagem ficar fixa ao rolar a página */
     filter: grayscale(30%);
     /* Aplica um tom de cinza na imagem */
@@ -118,9 +118,9 @@ section {
     padding: 20px;
 }
 
-section .text-primary{
-  margin: 8px;
- padding: 8px;
+section .text-primary {
+    margin: 8px;
+    padding: 8px;
 }
 
 
@@ -243,15 +243,20 @@ section p strong {
     font-weight: bold;
     margin-top: 10px;
     margin-bottom: 10px;
-    padding: 5px 10px; /* Adiciona um espaçamento interno */
-    border: 2px solid var(--cor-verde); /* Adiciona uma borda sólida verde */
-    border-radius: 5px; /* Arredonda os cantos da borda */
-    display: inline-block; /* Faz com que a borda envolva o conteúdo */
+    padding: 5px 10px;
+    /* Adiciona um espaçamento interno */
+    border: 2px solid var(--cor-verde);
+    /* Adiciona uma borda sólida verde */
+    border-radius: 5px;
+    /* Arredonda os cantos da borda */
+    display: inline-block;
+    /* Faz com que a borda envolva o conteúdo */
     font-size: medium;
 }
+
 .pronta-entrega i {
     margin-right: 5px;
-    
+
 }
 
 .faca-pedido {
@@ -259,15 +264,20 @@ section p strong {
     font-weight: bold;
     margin-top: 10px;
     margin-bottom: 10px;
-    padding: 5px 10px; /* Adiciona um espaçamento interno */
-    border: 2px solid var(--cor-azul); /* Adiciona uma borda sólida verde */
-    border-radius: 5px; /* Arredonda os cantos da borda */
-    display: inline-block; /* Faz com que a borda envolva o conteúdo */
+    padding: 5px 10px;
+    /* Adiciona um espaçamento interno */
+    border: 2px solid var(--cor-azul);
+    /* Adiciona uma borda sólida verde */
+    border-radius: 5px;
+    /* Arredonda os cantos da borda */
+    display: inline-block;
+    /* Faz com que a borda envolva o conteúdo */
     font-size: medium;
 }
+
 .faca-pedido i {
     margin-right: 5px;
-    
+
 }
 
 /* Botão de Compra */
@@ -331,10 +341,8 @@ footer {
 
 /* Formas de Pagamento */
 .payment-info {
-    display: flex;
-    justify-content: flex-end;
+    display: flow-root;
     /* Alinha os ícones de pagamento à direita */
-    margin-bottom: 10px;
     /* Espaçamento abaixo do bloco de formas de pagamento */
 }
 
@@ -357,6 +365,12 @@ footer {
 .media-pay {
     display: flex;
     flex-direction: column;
+    margin-top: 10px;
+    margin-right: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-bottom-width: 10px;
+    
 }
 
 
@@ -389,20 +403,24 @@ p.text-center {
     .col-md-3 {
         flex: 1 1 48%;
     }
+
     footer {
-       font-size: small;
+        font-size: small;
     }
+
     .container {
         max-width: 1200px;
     }
+
     p.text-center {
         padding: 8px;
         margin: 8px;
     }
-    section .text-primary{
+
+    section .text-primary {
         margin: 8px;
-       padding: 8px;
-      }
+        padding: 8px;
+    }
 
 
 }
@@ -415,19 +433,23 @@ p.text-center {
     .col-md-3 {
         flex: 1 1 100%;
     }
+
     footer {
         font-size: small;
-     }
-     .container {
+    }
+
+    .container {
         max-width: 1200px;
     }
+
     p.text-center {
         padding: 8px;
         margin: 8px;
     }
-    section .text-primary{
+
+    section .text-primary {
         margin: 8px;
-       padding: 8px;
-      }
+        padding: 8px;
+    }
 
 }
