@@ -1,0 +1,244 @@
+/* Importa as variáveis de cores (assumindo que você as tenha definidas em um arquivo separado ou no root do seu index.css) */
+:root {
+    --cor-base: #fafaff;
+    --cor-rosa: #AA41FA;
+    --cor-azul: #34a6d3;
+    --cor-marinho: #4150FA;
+    --cor-roxo: #6E41FA;
+    --cor-azul-morinho: #005ce6;
+    --cor-verde: #42c505;
+    --cor-preta: #000;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: var(--cor-base);
+    color: var(--cor-preta);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    color: var(--cor-base);
+}
+
+/* Estilos do Cabeçalho */
+.ebooks-header {
+    background: linear-gradient(to right, var(--cor-rosa), var(--cor-marinho));
+    position: relative;
+    overflow: hidden;
+}
+
+.ebooks-header .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Camada escura transparente */
+    z-index: 1;
+}
+
+.ebooks-header .container {
+    position: relative;
+    z-index: 2;
+}
+
+.ebooks-header h1 {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+}
+
+.ebooks-header p {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--cor-base);
+}
+
+header p strong {
+    font-size: 1.5rem;
+    color: var(--cor-azul);
+}
+
+/* Estilos da Navegação */
+.main-nav {
+    background: linear-gradient(to right, var(--cor-rosa), var(--cor-marinho));
+    color: var(--cor-texto-claro);
+    padding: 10px 20px;
+    text-align: center;
+}
+
+.nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    color: var(--cor-base);
+}
+
+.nav-item {
+    display: inline;
+    margin: 0 15px;
+}
+
+@media (max-width: 576px) {
+    
+    .nav-list {
+        list-style: none; /* Correção: era "nome", deve ser "none" para remover os marcadores */
+        padding: 0;
+        margin: 0;
+        display: flex; /* Usar flexbox para controlar o layout dos itens */
+        justify-content: center; /* Centraliza os itens horizontalmente */
+        align-items: center; /* Alinha os itens verticalmente (se necessário) */
+    }
+    
+    .nav-item {
+        /* display: inline; REMOVA esta linha */
+        margin: 0 15px; /* Espaçamento entre os itens */
+    }
+}
+
+.nav-link {
+    color: var(--cor-texto-claro);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--cor-azul);
+}
+
+/* Estilos da Seção de Ebooks */
+.ebooks-section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.ebooks-section h2 {
+    font-size: 2.5rem;
+    color: var(--cor-azul);
+    margin-bottom: 30px;
+}
+
+.ebook-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.ebook-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.ebook-card img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #eee;
+}
+
+.ebook-card .card-body {
+    padding: 15px;
+    text-align: center;
+}
+
+.ebook-card .card-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--cor-preta);
+}
+
+.ebook-card .card-text {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.ebook-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ebook-actions .price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--cor-rosa);
+}
+
+.ebook-actions .btn-primary {
+    background-color: var(--cor-azul);
+    color: var(--cor-texto-claro);
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.ebook-actions .btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos do Rodapé (reutilizando o do index.html) */
+.footer {
+    background: linear-gradient(to right, var(--cor-rosa), var(--cor-marinho));
+    color: var(--cor-texto-claro);
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 40px;
+}
+
+.footer .copyright p {
+    margin: 5px 0;
+    font-size: 0.9em;
+}
+
+.footer .contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer .contact-info p {
+    margin: 5px 0;
+    font-size: 0.9em;
+}
+
+.footer .media-pay {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.footer .social-media a,
+.footer .payment-info a {
+    color: var(--cor-texto-claro);
+    text-decoration: none;
+    margin-left: 5px;
+}
+
+.footer .social-media span,
+.footer .payment-info span {
+    font-size: 1.2em;
+}
+
+.footer .payment-info {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}

@@ -89,13 +89,46 @@ header h1 {
 }
 
 header p {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
+    font-weight: 300;
     color: var(--cor-base);
 }
 
 header p strong {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     color: var(--cor-azul);
+}
+
+/* Estilos para o Menu de Navegação */
+.main-nav {
+    background: linear-gradient(to right, var(--cor-rosa), var(--cor-marinho)); /* Mesma cor do rodapé */
+    color: var(--cor-base); /* Cor do texto do menu */
+    padding: 10px 20px; /* Espaçamento interno */
+    text-align: center; /* Centraliza o menu */
+}
+
+.nav-list {
+    list-style: none; /* Remove os marcadores de lista */
+    padding: 0;
+    margin: 0;
+    display: inline-block; /* Para centralizar os itens */
+}
+
+.nav-item {
+    display: inline; /* Coloca os itens em linha */
+    margin: 0 15px; /* Espaçamento entre os itens */
+}
+
+.nav-link {
+    color: var(--cor-base); /* Cor dos links */
+    text-decoration: none; /* Remove o sublinhado */
+    font-weight: bold; /* Texto em negrito */
+    font-size: 1.1em; /* Tamanho da fonte */
+    transition: color 0.3s ease; /* Transição suave na cor */
+}
+
+.nav-link:hover {
+    color: var(--cor-azul); /* Cor ao passar o mouse */
 }
 
 /* Seções */
@@ -116,6 +149,14 @@ section {
     display: flex;
     flex-direction: column;
     padding: 20px;
+}
+.sobre-nos .imagem {
+    width: 100%; /* Ajuste a largura conforme necessário (porcentagem da largura do parágrafo) */
+    height: auto; /* Para manter a proporção da imagem */
+    max-width: 900px; /* Defina uma largura máxima em pixels se desejar */
+    display: block; /* Para que a margem automática funcione e evite comportamentos inline */
+    margin: 10px auto 0; /* Espaçamento acima, centralização horizontal, sem espaçamento abaixo (ajuste conforme preferir) */
+    /* Outros estilos opcionais como border-radius e box-shadow */
 }
 
 section .text-primary {
@@ -331,7 +372,32 @@ footer {
 }
 
 .social-media a {
-    color: var(--cor-base);
+    color: var(--cor-base);/* Adaptação para telas menores */
+    @media (max-width: 768px) {
+        .main-nav {
+            padding: 10px;
+        }
+    
+        .nav-item {
+            margin: 0 10px;
+        }
+    
+        .nav-link {
+            font-size: 1em;
+        }
+    }
+    
+    @media (max-width: 576px) {
+        .nav-list {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    
+        .nav-item {
+            margin: 10px 0;
+        }
+    }
     /* Define a cor dos ícones */
     text-decoration: none;
     /* Remove o sublinhado dos links */
@@ -400,7 +466,7 @@ p.text-center {
     }
 
     header h1 {
-        font-size: 2.5rem;
+        font-size: 3.5rem;
     }
 
     section h2 {
@@ -441,7 +507,7 @@ p.text-center {
     }
 
     header h1 {
-        font-size: 2rem;
+        font-size: 3.5rem;
     }
 
     .col-md-3 {
@@ -466,4 +532,36 @@ p.text-center {
         padding: 8px;
     }
 
+}
+
+/* Adaptação para telas menores */
+@media (max-width: 768px) {
+    .main-nav {
+        padding: 10px;
+    }
+
+    .nav-item {
+        margin: 0 10px;
+    }
+
+    .nav-link {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 576px) {
+    
+    .nav-list {
+        list-style: none; /* Correção: era "nome", deve ser "none" para remover os marcadores */
+        padding: 0;
+        margin: 0;
+        display: flex; /* Usar flexbox para controlar o layout dos itens */
+        justify-content: center; /* Centraliza os itens horizontalmente */
+        align-items: center; /* Alinha os itens verticalmente (se necessário) */
+    }
+    
+    .nav-item {
+        /* display: inline; REMOVA esta linha */
+        margin: 0 15px; /* Espaçamento entre os itens */
+    }
 }
