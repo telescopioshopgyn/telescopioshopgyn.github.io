@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Produto</title>
+    <link rel="stylesheet" href="../styles/styles-produto01.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=file_open" />
+</head>
+
+<body>
+    <h1 id="produto-nome">Suporte Adaptador de Celular para Binóculos, Telescópios e Lunetas
+    </h1>
+    <div class="produto-detalhes">
+        <!-- Imagem do Produto -->
+        <img id="produto-imagem" src="../produtos/SUPORTES E ADAPTADORES/adaptador_modelos.jpg" />
+
+        <!-- Caixa de Informações -->
+        <div class="caixa-info">
+            <p id="produto-descricao">
+                Esses suportes permitem que fixe o smartphone ao binóculo ou telescópio, alinhando a
+                câmera do telefone com a ocular óptica do dispositivo para capturar imagens ou
+                vídeos com facilidade.
+                Especificações:
+                - Material do punho: ABS
+                - Cor: Preto
+                - Escala do diâmetro do ocular: 2,8 à 4,8cm
+                - Capacidade do suporte do telefone: 5,5 à 8,5cm
+
+                Conexão Método:
+                Conecte o adaptador: insira o adaptador na ocular do telescópio e gire o botão no
+                sentido horário para prendê-lo.
+                Ajuste o slot do telefone: Gire o botão no sentido anti-horário para abrir o slot do
+                telefone e ajustá-lo ao tamanho da câmera do telefone.
+                Conecte o telefone para tirar uma foto: ajuste a alça do adaptador, para que a lente
+                da câmera do telefone seja voltada para o ponto de visualização da ocular do
+                telescópio, conserte o telefone com firmeza, você pode assistir à foto.
+                Pacote incluído:
+                - 1x Suporte Celular Smartphone Adaptável Binoculo Telescópio. </p>
+            <div class="info-valor">
+                <br>
+                <span>Por apenas: </span>
+                <div id="produto-preco"> R$ 129,98
+                </div>
+            </div>
+            <div class="botoes">
+                <button onclick="window.open('https://telescopioshopgyn.github.io/')">
+                    <span class="material-symbols-outlined">
+                        file_open
+                    </span> Acesse o Manual</button>
+                <a id="whatsapp-link" target="_blank">
+                    WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Galeria de Imagens -->
+    <div class="galeria">
+        <h2>Galeria de Imagens</h2>
+        <img src="../produtos/SUPORTES E ADAPTADORES/suporte_telescopio.jpeg" alt="Imagem 1">
+        <img src="../produtos/SUPORTES E ADAPTADORES/adaptador_modelos.jpg" alt="Imagem 2">
+
+    </div>
+
+    <!-- Vídeo do Produto -->
+    <div class="video-container">
+        <h2>Vídeo do Produto</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/wmlETLR2KYU?si=h0_ASt5JqOgvm8ZL"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="copyright">
+            <p>© 2025 Telescopio Shop Gyn. Todos os direitos reservados.</p>
+        </div>
+        <div class="contact-info">
+            <div class="contact-info__email">
+                <p>Email: Wyllamcoelho8@gmail.com</p>
+                <div class="contact-info__telefone">
+                    <p>Telefone: (62) 981897524</p>
+                    <div class="contact-info__endereço">
+                        <p>Endereço: Rua Carlos Gomes, Condominio Grand Jardim, Lorena Parque Goiânia-GO</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="media-pay">
+            <div class="social-media">
+                <span class="
+                    fab fa-instagram-square"></span>
+                <a href="https://www.instagram.com/telescopioshopgyn?igsh=MW83a3lpemRxdmlhNg==" target="_blank">
+                    Instagram</a>
+            </div>
+            <div class="payment-info">
+                <a class="pix">Pix</a>
+                <span class="fa fas fa-money-bill-wave"></span>
+                <a class="cartao">Cartões</a>
+                <span class="fa fa-credit-card"></span>
+            </div>
+        </div>
+
+
+
+    </footer>
+
+
+    <script>
+        // Obtém a descrição do produto
+        var descricao = document.getElementById("produto-nome").innerText;
+
+        // Codifica o texto para a URL
+        var mensagem = encodeURIComponent("Olá, quero comprar! " + descricao);
+
+        // Define o link do WhatsApp com a mensagem
+        document.getElementById("whatsapp-link").href = "https://wa.me/5562981897524?text=" + mensagem;
+    </script>
+
+</body>
+
+</html>
