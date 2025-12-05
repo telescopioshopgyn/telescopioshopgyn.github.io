@@ -57,17 +57,25 @@ header {
 
 .custom-header {
     background-image: url('../background/zgdf.gif');
-    background-size: cover;
-    /* CORREÇÃO: Usa cover para preencher e não repetir */
+    background-size: cover; 
+    /* Esta linha garante que a imagem preencha o espaço sem ser esticada, 
+       cortando o que for necessário para manter a proporção original. */
     background-position: center;
     background-attachment: scroll;
     filter: grayscale(30%);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-    padding: 80px 0;
+    
+    /* Mantenha o padding para dar a altura básica ao cabeçalho */
+    padding: 80px 0; 
+    
     text-align: center;
     z-index: 1;
     background-repeat: no-repeat;
-    /* ADIÇÃO: Garante que a imagem nunca se repita */
+    
+    /* REMOVER: min-height: 60vh; */ 
+    /* REMOVER: display: flex; */
+    /* REMOVER: align-items: center; */
+    /* REMOVER: justify-content: center; */
 }
 
 header h1 {
@@ -398,6 +406,17 @@ p.text-center {
 }
 
 @media (max-width: 768px) {
+    
+    /* 1. CORREÇÃO PRINCIPAL NO CABEÇALHO: 
+       Remove min-height e display: flex para evitar distorção e
+       reduz o padding para ajustar o tamanho do banner em telas menores */
+    .custom-header {
+        padding: 60px 0; /* Reduz o padding vertical */
+        filter: grayscale(30%); /* Mantém a cor original do cabeçalho principal */
+        /* O resto das propriedades (background-size, position, etc.) 
+           são herdadas do bloco principal e estão corretas */
+    }
+
 
     /* Produtos: Mudar o grid para 2 colunas no tablet */
     .container-produtos {
@@ -419,20 +438,21 @@ p.text-center {
     .footer-section p {
         text-align: center;
     }
+
     .sobre-nos {
-    background-color: var(--cor-base);
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    justify-content: space-between;
-    height: 100%;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    /* CORREÇÃO: Remove o padding lateral do card. 
+        background-color: var(--cor-base);
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        justify-content: space-between;
+        height: 100%;
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        /* CORREÇÃO: Remove o padding lateral do card. 
        Mantemos apenas o padding vertical, se necessário. */
-    padding: 20px 0 5px 0; 
-}
+        padding: 20px 0 5px 0;
+    }
 
     /* Mídias Sociais e Pagamento: Ficam verticais no mobile */
     .media-pay {
@@ -448,7 +468,6 @@ p.text-center {
 }
 
 @media (max-width: 600px) {
-
     /* Estilos para o Menu de Navegação */
     .main-nav {
         /* ... (mantenha os estilos existentes) ... */
@@ -477,6 +496,19 @@ p.text-center {
 
 @media (max-width: 500px) {
 
+    /* 2. AJUSTE FINO NO CABEÇALHO PARA CELULARES */
+    .custom-header {
+        padding: 40px 0; /* Reduz ainda mais o padding para celulares */
+    }
+    
+    header h1 {
+        font-size: 2.5rem; /* Ajusta o tamanho do H1 no celular */
+    }
+    
+    header p {
+        font-size: 1.1rem; /* Ajusta o tamanho do parágrafo no celular */
+    }
+    
     /* Produtos: Mudar o grid para 1 coluna no celular */
     .container-produtos {
         grid-template-columns: 1fr;
