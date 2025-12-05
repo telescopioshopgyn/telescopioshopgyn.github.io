@@ -68,12 +68,13 @@ body {
 }
 
 /* Preço do Produto */
+/* Ajuste para o Preço */
 #produto-preco {
-    font-size: 24px;
+    /* Garante que o preço fique em destaque na mesma linha */
+    font-size: 1.8em; /* Ajuste o tamanho da fonte conforme necessário */
     font-weight: bold;
-    color: var(--cor-preta);
-    margin-bottom: 15px;
-    text-align: center;
+    color: #000; /* Defina a cor desejada, por exemplo, preto */
+    margin-left: 5px; /* Adiciona um pequeno espaço entre "Por apenas:" e o valor */
 }
 
 /* Botões */
