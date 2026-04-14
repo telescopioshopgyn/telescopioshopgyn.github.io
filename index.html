@@ -1,429 +1,1462 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Telescopio Shop Gyn</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./styles/styles-index.css">
+    <title>Telescopio Shop Gyn – O Universo ao Seu Alcance</title>
     <link rel="icon" href="./icon/favicon-16x16.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        /* ===== RESET & ROOT ===== */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --void:       #04060e;
+            --deep:       #080d1a;
+            --nebula:     #0d1530;
+            --card-bg:    #0f1828;
+            --card-bdr:   #1e2d4a;
+            --gold:       #e8c56d;
+            --gold-light: #f5d98a;
+            --gold-glow:  rgba(232,197,109,0.18);
+            --star-blue:  #7eb8f7;
+            --white:      #f0f4ff;
+            --muted:      #8a9bbf;
+            --whatsapp:   #25d366;
+            --whatsapp-d: #128c4a;
+            --red-old:    #d94f4f;
+            --green-badge:#2ecc71;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            background-color: var(--void);
+            color: var(--white);
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 400;
+            overflow-x: hidden;
+            cursor: default;
+        }
+
+        /* ===== STAR CANVAS ===== */
+        #starfield {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* ===== LAYOUT WRAPPER ===== */
+        .page-wrap { position: relative; z-index: 1; }
+
+        /* ===== NAV ===== */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 40px;
+            background: rgba(4,6,14,0.85);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(232,197,109,0.12);
+        }
+
+        .nav-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--gold);
+            text-decoration: none;
+            letter-spacing: 0.03em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-brand .brand-icon {
+            font-size: 1.4rem;
+            color: var(--star-blue);
+        }
+
+        .nav-links { display: flex; gap: 32px; list-style: none; }
+
+        .nav-links a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            transition: color 0.25s;
+        }
+
+        .nav-links a:hover { color: var(--gold); }
+
+        .nav-cta {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 9px 20px;
+            background: var(--whatsapp);
+            color: #fff !important;
+            border-radius: 50px;
+            font-size: 0.8rem !important;
+            font-weight: 600 !important;
+            text-transform: uppercase !important;
+            text-decoration: none;
+            transition: background 0.25s, transform 0.2s !important;
+        }
+
+        .nav-cta:hover { background: var(--whatsapp-d) !important; transform: scale(1.04) !important; }
+
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 92vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px 20px 80px;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 70% 60% at 50% 40%, rgba(126,184,247,0.07) 0%, transparent 70%),
+                        radial-gradient(ellipse 50% 40% at 50% 80%, rgba(232,197,109,0.05) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 18px;
+            border: 1px solid rgba(232,197,109,0.35);
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 28px;
+            background: rgba(232,197,109,0.06);
+            animation: fadeDown 0.8s ease both;
+        }
+
+        .hero-eyebrow i { font-size: 0.7rem; color: var(--star-blue); }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.8rem, 7vw, 5.5rem);
+            font-weight: 900;
+            line-height: 1.08;
+            letter-spacing: -0.02em;
+            color: var(--white);
+            margin-bottom: 24px;
+            animation: fadeDown 0.9s 0.1s ease both;
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            color: var(--gold);
+            text-shadow: 0 0 40px rgba(232,197,109,0.4);
+        }
+
+        .hero p {
+            max-width: 560px;
+            font-size: 1.1rem;
+            color: var(--muted);
+            line-height: 1.7;
+            margin-bottom: 44px;
+            animation: fadeDown 1s 0.2s ease both;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            justify-content: center;
+            animation: fadeDown 1.1s 0.3s ease both;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 36px;
+            background: var(--gold);
+            color: var(--void);
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-decoration: none;
+            letter-spacing: 0.02em;
+            transition: all 0.25s;
+            box-shadow: 0 0 30px rgba(232,197,109,0.3);
+        }
+
+        .btn-primary:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 0 50px rgba(232,197,109,0.5);
+        }
+
+        .btn-ghost {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 36px;
+            border: 1px solid rgba(232,197,109,0.35);
+            color: var(--gold);
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: all 0.25s;
+        }
+
+        .btn-ghost:hover {
+            background: rgba(232,197,109,0.08);
+            border-color: var(--gold);
+        }
+
+        /* ===== TRUST STRIP ===== */
+        .trust-strip {
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            flex-wrap: wrap;
+            padding: 32px 40px;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            background: rgba(13,21,48,0.5);
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--muted);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .trust-item i {
+            color: var(--gold);
+            font-size: 1.1rem;
+        }
+
+        /* ===== SECTION HEADER ===== */
+        .section-header {
+            text-align: center;
+            padding: 80px 20px 48px;
+        }
+
+        .section-label {
+            display: inline-block;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--star-blue);
+            margin-bottom: 12px;
+        }
+
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 700;
+            color: var(--white);
+            line-height: 1.2;
+        }
+
+        .section-header h2 span { color: var(--gold); }
+
+        .section-header p {
+            color: var(--muted);
+            font-size: 1rem;
+            margin-top: 12px;
+            max-width: 500px;
+            margin-inline: auto;
+            line-height: 1.6;
+        }
+
+        /* ===== PRODUCT GRID ===== */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
+            padding: 0 40px 80px;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        /* ===== PRODUCT CARD ===== */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-bdr);
+            border-radius: 20px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.35s cubic-bezier(0.23,1,0.32,1),
+                        border-color 0.35s,
+                        box-shadow 0.35s;
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(232,197,109,0.45);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5),
+                        0 0 40px rgba(232,197,109,0.1);
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            z-index: 10;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 13px;
+            border-radius: 50px;
+            font-size: 0.68rem;
+            font-weight: 800;
+            letter-spacing: 0.09em;
+            text-transform: uppercase;
+            box-shadow: 0 3px 14px rgba(0,0,0,0.55);
+        }
+
+        .badge-delivery {
+            background: #1a4d2e;
+            color: #4ade80;
+            border: 1.5px solid #2ecc71;
+        }
+
+        .badge-order {
+            background: #0f2340;
+            color: #93c5fd;
+            border: 1.5px solid #3b82f6;
+        }
+
+        .card-img-wrap {
+            height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 28px;
+            background: linear-gradient(135deg, rgba(13,21,48,0.8) 0%, rgba(4,6,14,0.95) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-img-wrap::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 60px;
+            background: linear-gradient(to top, var(--card-bg), transparent);
+        }
+
+        .card-img-wrap img {
+            max-height: 170px;
+            max-width: 100%;
+            object-fit: contain;
+            filter: drop-shadow(0 8px 24px rgba(126,184,247,0.15));
+            transition: transform 0.4s cubic-bezier(0.23,1,0.32,1),
+                        filter 0.4s;
+            position: relative;
+            z-index: 1;
+        }
+
+        .card:hover .card-img-wrap img {
+            transform: scale(1.06);
+            filter: drop-shadow(0 12px 32px rgba(232,197,109,0.2));
+        }
+
+        .card-body {
+            padding: 20px 22px 22px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .card-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--white);
+            line-height: 1.35;
+            margin-bottom: 8px;
+        }
+
+        .card-desc {
+            font-size: 0.8rem;
+            color: var(--muted);
+            line-height: 1.6;
+            margin-bottom: 16px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-pricing {
+            margin-top: auto;
+            margin-bottom: 16px;
+        }
+
+        .price-old {
+            font-size: 0.8rem;
+            color: var(--red-old);
+            text-decoration: line-through;
+            margin-bottom: 2px;
+        }
+
+        .price-new {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gold);
+            letter-spacing: -0.02em;
+            line-height: 1;
+        }
+
+        .price-installment {
+            font-size: 0.75rem;
+            color: var(--muted);
+            margin-top: 4px;
+        }
+
+        .card-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .btn-whatsapp {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            padding: 13px 20px;
+            background: var(--whatsapp);
+            color: #fff;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: background 0.25s, transform 0.2s, box-shadow 0.25s;
+            box-shadow: 0 4px 20px rgba(37,211,102,0.25);
+            letter-spacing: 0.02em;
+        }
+
+        .btn-whatsapp:hover {
+            background: var(--whatsapp-d);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(37,211,102,0.4);
+        }
+
+        .btn-whatsapp i { font-size: 1.1rem; }
+
+        .btn-details {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border: 1px solid var(--card-bdr);
+            color: var(--muted);
+            border-radius: 12px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            text-decoration: none;
+            cursor: pointer;
+            background: transparent;
+            transition: border-color 0.25s, color 0.25s;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .btn-details:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+
+        /* ===== DIVIDER ===== */
+        .star-divider {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            max-width: 400px;
+            margin: 0 auto 60px;
+            padding: 0 40px;
+            opacity: 0.35;
+        }
+
+        .star-divider::before,
+        .star-divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--gold);
+        }
+
+        .star-divider i { color: var(--gold); font-size: 0.7rem; }
+
+        /* ===== ABOUT SECTION ===== */
+        .about-section {
+            max-width: 1300px;
+            margin: 0 auto 80px;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-text .section-label { display: block; margin-bottom: 12px; }
+
+        .about-text h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 3vw, 2.4rem);
+            font-weight: 700;
+            color: var(--white);
+            line-height: 1.25;
+            margin-bottom: 20px;
+        }
+
+        .about-text h2 span { color: var(--gold); }
+
+        .about-text p {
+            font-size: 0.95rem;
+            color: var(--muted);
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        .about-text p strong { color: var(--gold); }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin-top: 28px;
+        }
+
+        .feat-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 14px;
+            border: 1px solid var(--card-bdr);
+            border-radius: 12px;
+            background: var(--card-bg);
+        }
+
+        .feat-item i {
+            color: var(--gold);
+            font-size: 1rem;
+            margin-top: 2px;
+        }
+
+        .feat-item p {
+            font-size: 0.78rem;
+            color: var(--muted);
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .feat-item strong {
+            display: block;
+            color: var(--white);
+            font-size: 0.85rem;
+            margin-bottom: 2px;
+        }
+
+        .about-visual {
+            position: relative;
+            border-radius: 24px;
+            overflow: hidden;
+            border: 1px solid var(--card-bdr);
+            min-height: 380px;
+            background: var(--card-bg);
+        }
+
+        .about-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.75;
+            display: block;
+        }
+
+        .about-visual-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(13,21,48,0.7) 0%, rgba(4,6,14,0.4) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .about-visual-quote {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .about-visual-quote i {
+            font-size: 3rem;
+            color: var(--gold);
+            opacity: 0.5;
+            margin-bottom: 16px;
+        }
+
+        .about-visual-quote p {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-style: italic;
+            color: var(--white);
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .about-visual-quote span {
+            display: block;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.8rem;
+            color: var(--gold);
+            margin-top: 12px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        /* ===== CONTACT SECTION ===== */
+        .contact-section {
+            background: linear-gradient(135deg, var(--nebula) 0%, var(--deep) 100%);
+            border-top: 1px solid rgba(255,255,255,0.06);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            padding: 80px 40px;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 16px;
+        }
+
+        .contact-section h2 span { color: var(--gold); }
+
+        .contact-section > p {
+            color: var(--muted);
+            font-size: 1rem;
+            margin-bottom: 44px;
+            max-width: 480px;
+            margin-inline: auto;
+            line-height: 1.6;
+        }
+
+        .contact-cards {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            max-width: 800px;
+            margin: 0 auto 44px;
+        }
+
+        .contact-card {
+            flex: 1;
+            min-width: 206px;
+            max-width: 220px;
+            padding: 24px 20px;
+            border: 1px solid var(--card-bdr);
+            border-radius: 16px;
+            background: var(--card-bg);
+            transition: border-color 0.25s, transform 0.25s;
+        }
+
+        .contact-card:hover {
+            border-color: rgba(232,197,109,0.4);
+            transform: translateY(-4px);
+        }
+
+        .contact-card i {
+            font-size: 1.6rem;
+            color: var(--gold);
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .contact-card strong {
+            display: block;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--muted);
+            margin-bottom: 6px;
+        }
+
+        .contact-card a, .contact-card span {
+            font-size: 0.9rem;
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .contact-card a:hover { color: var(--gold); }
+
+        .big-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            gap: 14px;
+            padding: 20px 48px;
+            background: var(--whatsapp);
+            color: #fff;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.05rem;
+            text-decoration: none;
+            transition: all 0.25s;
+            box-shadow: 0 0 40px rgba(37,211,102,0.3);
+            letter-spacing: 0.02em;
+        }
+
+        .big-whatsapp:hover {
+            background: var(--whatsapp-d);
+            transform: translateY(-3px);
+            box-shadow: 0 0 60px rgba(37,211,102,0.5);
+        }
+
+        .big-whatsapp i { font-size: 1.4rem; }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--void);
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding: 40px 40px 24px;
+        }
+
+        .footer-grid {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 40px;
+            flex-wrap: wrap;
+            max-width: 1300px;
+            margin: 0 auto 30px;
+        }
+
+        .footer-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 10px;
+        }
+
+        .footer-tagline {
+            font-size: 0.8rem;
+            color: var(--muted);
+            max-width: 220px;
+            line-height: 1.6;
+        }
+
+        .footer-links h4 {
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--gold);
+            margin-bottom: 14px;
+            font-weight: 700;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .footer-links a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover { color: var(--gold); }
+
+        .footer-social {
+            display: flex;
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        .social-btn {
+            width: 38px;
+            height: 38px;
+            border: 1px solid var(--card-bdr);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--muted);
+            font-size: 0.9rem;
+            transition: all 0.25s;
+            text-decoration: none;
+        }
+
+        .social-btn:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+            background: rgba(232,197,109,0.08);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding-top: 20px;
+            font-size: 0.78rem;
+            color: var(--muted);
+        }
+
+        .pay-methods {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-top: 6px;
+            justify-content: center;
+        }
+
+        .pay-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 4px 10px;
+            border: 1px solid var(--card-bdr);
+            border-radius: 6px;
+            font-size: 0.72rem;
+            color: var(--muted);
+        }
+
+        .pay-tag i { color: var(--gold); font-size: 0.8rem; }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeDown {
+            from { opacity: 0; transform: translateY(-16px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 900px) {
+            nav { padding: 14px 24px; }
+            .nav-links { display: none; }
+            .products-grid { padding: 0 20px 60px; gap: 18px; }
+            .about-section {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                padding: 0 20px;
+            }
+            .about-visual { min-height: 260px; }
+            .contact-section { padding: 60px 20px; }
+            footer { padding: 32px 20px 20px; }
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2.2rem; }
+            .products-grid { grid-template-columns: 1fr; }
+            .trust-strip { gap: 24px; padding: 24px 20px; }
+            .section-header { padding: 60px 20px 36px; }
+            .about-features { grid-template-columns: 1fr; }
+            .contact-cards { flex-direction: column; align-items: center; }
+            .footer-grid { flex-direction: column; gap: 28px; }
+        }
+    </style>
 </head>
-
 <body>
-    <!-- Conteúdo Principal -->
-    <main class="container my-5">
-        <!-- Cabeçalho -->
-        <header class="custom-header text-white text-center py-5">
-            <div class="overlay"></div> <!-- Div com o fundo transparente -->
-            <div class="container">
-                <h1 class="display-4">Bem-vindo à Telescopio Shop Gym</h1>
-                <p class="lead">Explore o universo com nossos equipamentos astronômicos de <strong>alta
-                        qualidade</strong> .</p>
-            </div>
-        </header>
-        <nav class="main-nav">
-            <ul class="nav-list">
-                <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="./ebooks/ebooks.html" class="nav-link">Ebooks e Artigos</a></li>
-                <li class="nav-item"><a href="#sobre-nos-section" class="nav-link">Sobre Nós</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Contato</a></li>
-            </ul>
-        </nav>
 
+<!-- STAR CANVAS -->
+<canvas id="starfield"></canvas>
 
-        <!-- Seção Nossos Produtos -->
-        <section>
-            <h2 class="text-center text-primary">Nossos Produtos</h2>
-            <div class="container mt-4">
-                <div class="row text-center">
+<div class="page-wrap">
 
-                    <div class="container-produtos">
-                        <!--PRODUTO 00 -->
-                        <div class="card-produto">
-                            <img src="./produtos/TELESCOPIOS-REFRA/GREIKA MAK90.png" alt="Produto 1">
-                            <div class="info">
-                                <h2 class="descricao">Telescópio Greika MAK90 Cassegrain Maksutov</h2>
-                                <p>Viva a experiência de obter imagens espaciais inesquecíveis de alta qualidade com
-                                    este
-                                    Telescópio Greika MAK90 Cassegrain Maksutov.</p>
-                                <!--INICIO STATUS DE ESTOQUE-->
-                                <!--
-                                <div class="pronta-entrega">
-                                    <i class="fas fa-shipping-fast"></i> Pronta Entrega!
-                                </div>    
-                                -->
-                                <div class="faca-pedido">
-                                    <i class="fab fa-whatsapp"></i> Faça Seu Pedido!
-                                </div>
-                                <!--FIM STATUS DE ESTOQUE-->
-                                <div class="preco-antigo">R$ 3.859,99</div>
-                                <div class="preco">R$ 3.419,76</div>
-                                <button class="btn-compra" onclick="openProductPage('produto0')">Comprar</button>
-                            </div>
-                        </div>
-                        <!--PRODUTO 01 -->
-                        <div class="card-produto">
-                            <img src="./produtos/TELESCOPIOS-REFRA/bt400/capa.jpg" alt="Produto 1">
-                            <div class="info">
-                                <h2 class="descricao">Telescópio Greika BT40080 Equatorial</h2>
-                                <p>Estrelas que não são visíveis a olho nu, Crateras da Lua, Planetas maiores e mais
-                                    próximos como Júpiter, Saturno, Vênus e Marte serão vistos como pequeno círculo no
-                                    céu (pequena bolinha), mas são nítidos alguns detalhes como as listras de Júpiter e
-                                    os anéis de Saturno.</p>
-                                <!--INICIO STATUS DE ESTOQUE-->
-                                <!--
-                                <div class="pronta-entrega">
-                                    <i class="fas fa-shipping-fast"></i> Pronta Entrega!
-                                </div>    
-                                -->
-                                <div class="faca-pedido">
-                                    <i class="fab fa-whatsapp"></i> Faça Seu Pedido!
-                                </div>
-                                <!--FIM STATUS DE ESTOQUE-->
-                                <div class="preco-antigo">R$ 2.829,76</div>
-                                <div class="preco">R$ 2.366,96</div>
-                                <button class="btn-compra" onclick="openProductPage('produto1')">Comprar</button>
-                            </div>
-                        </div>
-                        <!--PRODUTO 02 -->
-                        <div class="card-produto">
-                            <img src="./produtos/TELESCOPIO-REFLE/GREIKA_REFLETOR_1400150/Telescópio Greika 1400150 Equatorial Newtoniano.png"
-                                alt="Produto 1">
-                            <div class="info">
-                                <h2 class="descricao">Telescópio Greika 1400150 Equatorial Newtoniano</h2>
-                                <p>Observação detalhada do sistema solar e eventos solares é possível
-                                    observar o espetáculo da movimentação das estrelas no
-                                    céu e todos os eventos celestes e eclipses lunares solares.</p>
-                                <!--INICIO STATUS DE ESTOQUE-->
-                                <!--
-                                <div class="pronta-entrega">
-                                    <i class="fas fa-shipping-fast"></i> Pronta Entrega!
-                                </div>    
-                                -->
-                                <div class="faca-pedido">
-                                    <i class="fab fa-whatsapp"></i> Faça Seu Pedido!
-                                </div>
-                                <!--FIM STATUS DE ESTOQUE-->
-                                <div class="preco-antigo">R$ 4.529,76</div>
-                                <div class="preco">R$ 3.229,76</div>
-                                <button class="btn-compra" onclick="openProductPage('produto3')">Comprar</button>
-                            </div>
-                        </div>
-                        <!--PRODUTO 03 -->
-                        <div class="card-produto">
-                            <img src="./produtos/TELESCOPIO-REFLE/GREIKA_REFLETOR_1000114/Telescópio Greika 1000114 Equatorial Newtoniano.png"
-                                alt="Produto 1">
-                            <div class="info">
-                                <h2 class="descricao">Telescópio Greika 1000114 Equatorial Newtoniano</h2>
-                                <p>Observe com detalhes; Planetas, Constelações, Nebulosas, eventos celestes e
-                                    terrestres.</p>
-                                <!--INICIO STATUS DE ESTOQUE-->
-                                <div class="pronta-entrega">
-                                    <i class="fas fa-shipping-fast"></i> Pronta Entrega!
-                                </div>
-                                <!--
-                                <div class="faca-pedido">
-                                    <i class="fab fa-whatsapp"></i> Faça Seu Pedido!
-                                </div>
-                                -->
-                                <!--FIM STATUS DE ESTOQUE-->
-                                <div class="preco-antigo">R$ 3.929,76</div>
-                                <div class="preco">R$ 2.929,99</div>
-                                <button class="btn-compra" onclick="openProductPage('produto2')">Comprar</button>
-                            </div>
-                        </div>
-                        <!--PRODUTO 04-->
-                        <div class="card-produto">
-                            <img src="./produtos/TELESCOPIOS-REFRA/900_60_greika/Telescópio Greika 90060 Refrator Azimutal.png"
-                                alt="Produto 1">
-                            <div class="info">
-                                <h2 class="descricao">Telescópio Greika 90060 Refrator Azimutal</h2>
-                                <p>Telescópio Greika Refrator Azimutal 90060 com Ampliação até 675x para Observação
-                                    Celeste
-                                    e Terrestre.</p>
+    <!-- NAV -->
+    <nav>
+        <a href="#" class="nav-brand">
+            <i class="fas fa-moon brand-icon"></i>
+            Telescopio Shop Gyn
+        </a>
+        <ul class="nav-links">
+            <li><a href="#">Início</a></li>
+            <li><a href="./ebooks/ebooks.html">Ebooks</a></li>
+            <li><a href="#sobre">Sobre Nós</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+        <a href="https://wa.me/5562981897524?text=Olá!%20Vi%20o%20site%20e%20quero%20saber%20mais%20sobre%20os%20produtos." target="_blank" class="nav-cta">
+            <i class="fab fa-whatsapp"></i> Fale Conosco
+        </a>
+    </nav>
 
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-eyebrow">
+            <i class="fas fa-circle"></i>
+            Equipamentos Astronômicos Premium · Goiânia-GO
+        </div>
+        <h1>O universo espera<br>por <em>você.</em></h1>
+        <p>Telescópios, binóculos e acessórios de alta qualidade para iniciantes e astrônomos experientes. Atendimento personalizado via WhatsApp.</p>
+        <div class="hero-actions">
+            <a href="#produtos" class="btn-primary">
+                <i class="fas fa-star"></i> Ver Produtos
+            </a>
+            <a href="https://wa.me/5562981897524?text=Olá!%20Quero%20ajuda%20para%20escolher%20um%20telescópio." target="_blank" class="btn-ghost">
+                <i class="fab fa-whatsapp"></i> Preciso de Ajuda
+            </a>
+        </div>
+    </section>
 
-                                <!--INICIO STATUS DE ESTOQUE-->
-                                <!--
-                                <div class="pronta-entrega">
-                                    <i class="fas fa-shipping-fast"></i> Pronta Entrega!
-                                </div>-->
+    <!-- TRUST STRIP -->
+    <div class="trust-strip">
+        <div class="trust-item"><i class="fas fa-truck-fast"></i> Pronta Entrega em selecionados</div>
+        <div class="trust-item"><i class="fas fa-shield-halved"></i> Produtos originais Greika</div>
+        <div class="trust-item"><i class="fas fa-qrcode"></i> Pix, Cartão e Parcelamento</div>
+        <div class="trust-item"><i class="fab fa-whatsapp"></i> Suporte via WhatsApp</div>
+    </div>
 
-                                <div class="faca-pedido">
-                                    <i class="fab fa-whatsapp"></i> Faça Seu Pedido!
-                                </div>
-                                <!--FIM STATUS DE ESTOQUE-->
-                                <div class="preco-antigo">R$ 2.089,76</div>
-                                <div class="preco">R$ 1.329,99</div>
-                                <button class="btn-compra" onclick="openProductPage('produto4')">Comprar</button>
-                            </div>
-                        </div>
-                        <!--PRODUTO 05 -->
-                        <div class="card-produto">
-                            <img src="./produtos/TELESCOPIOS-REFRA//700_70_greika/Telescópio Greika 70070 Refrator Azimutal.png"
-                                alt="Produto 1">
-                            <div class="info">
-                                <h2 class="descricao">Telescópio Greika 70070 Refrator Azimutal</h2>
-                                <p>Telescópio apropriado para observação de pássaros, aves e objetos fixos. E mais além,
-                                    a
-                                    Lua e Constelações de Órion, Lyra e Vulpecula.</p>
-                                <!--INICIO STATUS DE ESTOQUE-->
-                                <!--
-                                <div class="pronta-entrega">
-                                    <i class="fas fa-shipping-fast"></i> Pronta Entrega!
-                                </div>    
-                                -->
-                                <div class="faca-pedido">
-                                    <i class="fab fa-whatsapp"></i> Faça Seu Pedido!
-                                </div>
-                                <!--FIM STATUS DE ESTOQUE-->
-                                <div class="preco-antigo">R$ 2.385,76</div>
-                                <div class="preco">R$ 1.259,99</div>
-                                <button class="btn-compra" onclick="openProductPage('produto5')">Comprar</button>
-                            </div>
-                        </div>
-                        <!--PRODUTO 06 -->
-                        <div class="card-produto">
-                            <img src="./produtos/TELESCOPIOS-REFRA/Refrator Azimutal  BM36060D.png" alt="Produto 1">
-                            <div class="info">
-                                <h2 class="descricao">Telescópio BM36060D Greika</h2>
-                                <p>O MAIS COMPACTO! Um equipamento leve de nova geração, compacto, especialmente
-                                    projetado para permitir que um modelo econômico possa concentrar
-                                    grande entrada de luz proporcionando assim visualizações celestiais
-                                    e terrestres de qualidade superior, preservando ainda um
-                                    excelente fator custo benefício.</p>
-                                <!--INICIO STATUS DE ESTOQUE-->
-                                
-                                <div class="pronta-entrega">
-                                    <i class="fas fa-shipping-fast"></i> Pronta Entrega!
-                                </div>
-                                <!--
-                                <div class="faca-pedido">
-                                    <i class="fab fa-whatsapp"></i> Faça Seu Pedido!
-                                </div>
-                                -->
-                                <!--FIM STATUS DE ESTOQUE-->
-                                <div class="preco-antigo">R$ 689,76</div>
-                                <div class="preco">R$ 579,96</div>
-                                <button class="btn-compra" onclick="openProductPage('produto6')">Comprar</button>
-                            </div>
-                        </div>
-                        <!--PRODUTO 07 -->
-                        <div class="card-produto">
-                            <img src="./produtos/BINOCULOS/BINOCULOREFBI 10X40-60.png" alt="Produto 1">
-                            <div class="info">
-                                <h2 class="descricao">Binóculo Greika 10-40x60</h2>
-                                <p>Ampliação: 10 a 40 xDiâmetro objetiva (mm): 60
-                                    Sistema de foco: Central c/Zoom
-                                    Construção: Prisma Porro Bak4 X-Vision
-                                    Revestimento de lente: UV multirevestidas AzuisEscala visual em 1000m
-                                    (m): 60 em 10x
-                                    Saída de pupila: 6mm em 10xPeso (gr): 1.045
-                                    Medidas (cm): 23x7.4x19.5</p>
-                                <!--INICIO STATUS DE ESTOQUE-->
-                                <!--
-                                <div class="pronta-entrega">
-                                    <i class="fas fa-shipping-fast"></i> Pronta Entrega!
-                                </div>    
-                                -->
-                                <div class="faca-pedido">
-                                    <i class="fab fa-whatsapp"></i> Faça Seu Pedido!
-                                </div>
-                                <!--FIM STATUS DE ESTOQUE-->
-                                <div class="preco-antigo">R$ 729,76</div>
-                                <div class="preco">R$ 559,76</div>
-                                <button class="btn-compra" onclick="openProductPage('produto7')">Comprar</button>
-                            </div>
-                        </div>
-                        <!--PRODUTO 08 -->
-                        <div class="card-produto">
-                            <img src="./produtos/BINOCULOS/Binóculos Greika 10x50 com Bolsa.png" alt="Produto 1">
-                            <div class="info">
-                                <h2 class="descricao">Binóculos Greika 10x50 com Bolsa</h2>
-                                <p>Observe as crateras da Lua ou estrelas duplas,
-                                    aglomerados estelares e até identifique algumas nebulosas.</p>
-                                <!--INICIO STATUS DE ESTOQUE-->
-                                <!--
-                                <div class="pronta-entrega">
-                                    <i class="fas fa-shipping-fast"></i> Pronta Entrega!
-                                </div>
-                                -->
-                                <div class="faca-pedido">
-                                    <i class="fab fa-whatsapp"></i> Faça Seu Pedido!
-                                </div>
+    <!-- PRODUCTS SECTION -->
+    <section id="produtos">
+        <div class="section-header">
+            <span class="section-label">✦ Catálogo Completo</span>
+            <h2>Nossos <span>Produtos</span></h2>
+            <p>Cada instrumento é cuidadosamente selecionado para garantir a melhor experiência de observação</p>
+        </div>
 
-                                <!--FIM STATUS DE ESTOQUE-->
-                                <div class="preco-antigo">R$ 429,76</div>
-                                <div class="preco">R$ 389,98</div>
-                                <button class="btn-compra" onclick="openProductPage('produto8')">Comprar</button>
-                            </div>
-                        </div>
-                        <!--PRODUTO 09 -->
-                        <div class="card-produto">
-                            <img src="./produtos/BINOCULOS/binoculos 10x25.jpg" alt="Produto 1">
-                            <div class="info">
-                                <h2 class="descricao">BINÓCULO 10x25DCF</h2>
-                                <p>Corpo emborrachado;
-                                    Ampliação: 10x;
-                                    Campo de visão: 96/1000M;
-                                    Brilho Relativo: 6.3
-                                    Ângulo de Visão: 5.9°
-                                    Distância da Objetiva: 25mm;
-                                    Saída pupilar: 2.5mm;
-                                    Distância saída pupilar: 10mm;
-                                    Acompanha: bolsa exclusiva, alça e lenço para limpeza;
-                                    Lentes: multicoat ruby;
-                                    Material: metal com armadura de borracha;.</p>
+        <div class="products-grid">
 
-                                <!--INICIO STATUS DE ESTOQUE-->
-                                <div class="pronta-entrega">
-                                    <i class="fas fa-shipping-fast"></i> Pronta Entrega!
-                                </div>
-                                <!--
-                                <div class="faca-pedido">
-                                    <i class="fab fa-whatsapp"></i> Faça Seu Pedido!
-                                </div>
-                                -->
-                                <!--FIM STATUS DE ESTOQUE-->
-                                <div class="preco-antigo">R$ 399,76</div>
-                                <div class="preco">R$ 279,98</div>
-                                <button class="btn-compra" onclick="openProductPage('produto9')">Comprar</button>
-                            </div>
-                        </div>
-                        <!--PRODUTO 10 -->
-                        <div class="card-produto">
-                            <img src="./produtos/BUSSOLAS/GUEPARDO/51-K6vpPZmL._AC_SL1000_.jpg" alt="Produto 10">
-                            <div class="info">
-                                <h2 class="descricao">Guepardo, Bussola com Régua, Acompanha Tirante em Nylon </h2>
-                                <p>Bússola com corpo em material super resistente, líquida e com régua.
-                                    Ideal para localização de posições em mapas, ela é precisa, leve e eficiente para
-                                    qualquer tipo de aventura.
-                                    A Mapa acompanha tirante em nylon e é compacta para os usuário que necessitam
-                                    desbravar matas e parques fechados.
-                                    Informações gerais: Peso: 75 g Medidas: 5,5 x 9 cm Material: Polímero ultra
-                                    resistente Marca: Guepardo
-                                    Uso: Ideal para localização precisa em mapas, a Bússola Mapa é uma ferramenta
-                                    essencial para quem gosta de trilhas, montanhismo ou exploração em geral, garantindo
-                                    que você sempre saiba a direção certa a seguir.</p>
-                                <!--INICIO STATUS DE ESTOQUE-->
-                                <!--
-                                <div class="pronta-entrega">
-                                    <i class="fas fa-shipping-fast"></i> Pronta Entrega!
-                                </div>    
-                                -->
-                                <div class="faca-pedido">
-                                    <i class="fab fa-whatsapp"></i> Faça Seu Pedido!
-                                </div>
-                                <!--FIM STATUS DE ESTOQUE-->
-                                <div class="preco-antigo">R$ 89,76</div>
-                                <div class="preco">R$ 69,98</div>
-                                <button class="btn-compra" onclick="openProductPage('produto10')">Comprar</button>
-                            </div>
-                        </div>
-                        <!--PRODUTO 11 -->
-                        <div class="card-produto">
-                            <img src="./produtos/SUPORTES E ADAPTADORES/adaptador_modelos.jpg" alt="Produto 11">
-                            <div class="info">
-                                <h2 class="descricao">Suporte Adaptador de Celular para Binóculos, Telescópios e Lunetas
-                                </h2>
-                                <p> Um suporte para celular adaptável a binóculos ou telescópios é uma excelente adição
-                                    para quem deseja capturar imagens ou vídeos do que está observando através desses
-                                    dispositivos ópticos.</p>
-                                <!--INICIO STATUS DE ESTOQUE-->
-                                <!--
-                                <div class="pronta-entrega">
-                                    <i class="fas fa-shipping-fast"></i> Pronta Entrega!
-                                </div>    
-                                -->
-                                <div class="faca-pedido">
-                                    <i class="fab fa-whatsapp"></i> Faça Seu Pedido!
-                                </div>
-                                <!--FIM STATUS DE ESTOQUE-->
-                                <div class="preco-antigo">R$ 189,76</div>
-                                <div class="preco">R$ 129,98</div>
-                                <button class="btn-compra" onclick="openProductPage('produto11')">Comprar</button>
-                            </div>
-                        </div>
-                        <!-- Adicione mais produtos aqui -->
-                    </div>
-
-        </section>
-        <!-- Seção Sobre Nós -->
-        <section class="sobre-nos" id="sobre-nos-section">
-            <h2 class="text-center text-primary">Sobre Nós</h2>
-            <p class="text-center">
-
-                Na <strong>Telescopio Shop Gyn</strong>, acreditamos que explorar o universo é mais do que um hobby é
-                uma jornada de
-                descobertas.
-                <br> Nossa <strong>missão</strong> é tornar essa experiência acessível para todos, fornecendo
-                equipamentos
-                astronômicos de <strong>alta qualidade</strong> que permitem observar o cosmos com clareza e precisão.
-
-                <br> Com uma seleção criteriosa de telescópios, binóculos e acessórios, ajudamos desde iniciantes até
-                astrônomos experientes a alcançar novas fronteiras no céu. Trabalhamos com <strong>compromisso, paixão e
-                    conhecimento</strong> para oferecer não apenas produtos <strong>excepcionais</strong>, mas também um
-                atendimento dedicado e
-                confiável.
-
-                <br> Queremos que cada olhar para o céu seja uma inspiração. Por isso, estamos aqui para guiar você na
-                escolha do equipamento ideal, tornando sua experiência astronômica <strong>inesquecível</strong>.
-                <br>
-                <br>
-                <strong>Telescopio Shop Gyn – O universo ao seu alcance.</strong>
-            </p>
-            <img src="./background/sobre-nos-imagem.jpg" alt="Logo Telescopio Shop Gyn" class="imagem">
-        </section>
-    </main>
-
-    <!-- Rodapé -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-section contact-info">
-                <p>Email: Wyllamcoelho8@gmail.com</p>
-                <p>Telefone: (62) 981897524</p>
-                <p>Endereço: Rua Carlos Gomes, Condominio Grand Jardim, Lorena Parque Goiânia-GO</p>
-            </div>
-
-            <div class="footer-section media-pay">
-                <div class="social-media-container">
-                    <a href="https://www.instagram.com/telescopioshopgyn?igsh=MW83a3lpemRxdmlhNg==" target="_blank"
-                        class="social-link">
-                        <i class="fab fa-instagram"></i> Instagram
-                    </a>
+            <!-- PRODUTO 0 -->
+            <div class="card reveal">
+                <span class="card-badge badge-order"><i class="fab fa-whatsapp"></i> Faça seu pedido</span>
+                <div class="card-img-wrap">
+                    <img src="./produtos/TELESCOPIOS-REFRA/GREIKA MAK90.png" alt="Telescópio Greika MAK90">
                 </div>
-                <div class="payment-info">
-                    <span class="payment-item">
-                        <i class="fas fa-qrcode"></i> Pix
-                    </span>
-                    <span class="payment-item">
-                        <i class="fas fa-credit-card"></i> Cartões
-                    </span>
+                <div class="card-body">
+                    <h3 class="card-name">Telescópio Greika MAK90 Cassegrain Maksutov</h3>
+                    <p class="card-desc">Imagens espaciais inesquecíveis de alta qualidade. Corrige aberrações esféricas com lente convexa menisco frontal. Ideal para clusters e estrelas binárias.</p>
+                    <div class="card-pricing">
+                        <div class="price-old">R$ 3.859,99</div>
+                        <div class="price-new">R$ 3.419,76</div>
+                        <div class="price-installment">Em até 3x de R$1.334,92</div>
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://wa.me/5562981897524?text=Olá!%20Quero%20comprar%20o%20Telescópio%20Greika%20MAK90%20Cassegrain%20Maksutov" target="_blank" class="btn-whatsapp">
+                            <i class="fab fa-whatsapp"></i> Comprar via WhatsApp
+                        </a>
+                        <button class="btn-details" onclick="window.location.href='./pages/detalhes-produto0.html'">
+                            <i class="fas fa-circle-info"></i> Ver Detalhes
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUTO 1 -->
+            <div class="card reveal">
+                <span class="card-badge badge-order"><i class="fab fa-whatsapp"></i> Faça seu pedido</span>
+                <div class="card-img-wrap">
+                    <img src="./produtos/TELESCOPIOS-REFRA/bt400/capa.jpg" alt="Telescópio Greika BT40080">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-name">Telescópio Greika BT40080 Equatorial</h3>
+                    <p class="card-desc">Observe crateras da Lua, Júpiter, Saturno, Vênus e Marte. Veja as listras de Júpiter e os anéis de Saturno com nitidez surpreendente.</p>
+                    <div class="card-pricing">
+                        <div class="price-old">R$ 2.829,76</div>
+                        <div class="price-new">R$ 2.366,96</div>
+                        <div class="price-installment">Em até 3x de R$925,76</div>
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://wa.me/5562981897524?text=Olá!%20Quero%20comprar%20o%20Telescópio%20Greika%20BT40080%20Equatorial" target="_blank" class="btn-whatsapp">
+                            <i class="fab fa-whatsapp"></i> Comprar via WhatsApp
+                        </a>
+                        <button class="btn-details" onclick="window.location.href='./pages/detalhes-produto1.html'">
+                            <i class="fas fa-circle-info"></i> Ver Detalhes
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUTO 2 (1400150) -->
+            <div class="card reveal">
+                <span class="card-badge badge-order"><i class="fab fa-whatsapp"></i> Faça seu pedido</span>
+                <div class="card-img-wrap">
+                    <img src="./produtos/TELESCOPIO-REFLE/GREIKA_REFLETOR_1400150/Telescópio Greika 1400150 Equatorial Newtoniano.png" alt="Telescópio Greika 1400150">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-name">Telescópio Greika 1400150 Equatorial Newtoniano</h3>
+                    <p class="card-desc">Observação detalhada do sistema solar. Acompanhe a movimentação das estrelas, eclipses lunares, solares e todos os eventos celestes.</p>
+                    <div class="card-pricing">
+                        <div class="price-old">R$ 4.529,76</div>
+                        <div class="price-new">R$ 3.229,76</div>
+                        <div class="price-installment">Em até 3x de R$1.264,64</div>
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://wa.me/5562981897524?text=Olá!%20Quero%20comprar%20o%20Telescópio%20Greika%201400150%20Equatorial%20Newtoniano" target="_blank" class="btn-whatsapp">
+                            <i class="fab fa-whatsapp"></i> Comprar via WhatsApp
+                        </a>
+                        <button class="btn-details" onclick="window.location.href='./pages/detalhes-produto3.html'">
+                            <i class="fas fa-circle-info"></i> Ver Detalhes
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUTO 3 (1000114) - PRONTA ENTREGA -->
+            <div class="card reveal">
+                <span class="card-badge badge-delivery"><i class="fas fa-truck-fast"></i> Pronta Entrega</span>
+                <div class="card-img-wrap">
+                    <img src="./produtos/TELESCOPIO-REFLE/GREIKA_REFLETOR_1000114/Telescópio Greika 1000114 Equatorial Newtoniano.png" alt="Telescópio Greika 1000114">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-name">Telescópio Greika 1000114 Equatorial Newtoniano</h3>
+                    <p class="card-desc">Observe planetas, constelações, nebulosas, eventos celestes e terrestres com excelente riqueza de detalhes.</p>
+                    <div class="card-pricing">
+                        <div class="price-old">R$ 3.929,76</div>
+                        <div class="price-new">R$ 2.929,99</div>
+                        <div class="price-installment">Em até 3x de R$1.146,07</div>
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://wa.me/5562981897524?text=Olá!%20Quero%20comprar%20o%20Telescópio%20Greika%201000114%20Equatorial%20Newtoniano%20(Pronta%20Entrega)" target="_blank" class="btn-whatsapp">
+                            <i class="fab fa-whatsapp"></i> Comprar via WhatsApp
+                        </a>
+                        <button class="btn-details" onclick="window.location.href='./pages/detalhes-produto2.html'">
+                            <i class="fas fa-circle-info"></i> Ver Detalhes
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUTO 4 (90060)  PRONTA ENTREGA-->
+            <div class="card reveal">
+                <span class="card-badge badge-delivery"><i class="fas fa-truck-fast"></i> Pronta Entrega</span>
+                <div class="card-img-wrap">
+                    <img src="./produtos/TELESCOPIOS-REFRA/900_60_greika/Telescópio Greika 90060 Refrator Azimutal.png" alt="Telescópio Greika 90060">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-name">Telescópio Greika 90060 Refrator Azimutal</h3>
+                    <p class="card-desc">Ampliação até 675x para Observação Celeste e Terrestre. Versátil para iniciantes e observadores intermediários.</p>
+                    <div class="card-pricing">
+                        <div class="price-old">R$ 2.089,76</div>
+                        <div class="price-new">R$ 1.329,99</div>
+                        <div class="price-installment">Em até 3x de R$520,35</div>
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://wa.me/5562981897524?text=Olá!%20Quero%20comprar%20o%20Telescópio%20Greika%2090060%20Refrator%20Azimutal" target="_blank" class="btn-whatsapp">
+                            <i class="fab fa-whatsapp"></i> Comprar via WhatsApp
+                        </a>
+                        <button class="btn-details" onclick="window.location.href='./pages/detalhes-produto4.html'">
+                            <i class="fas fa-circle-info"></i> Ver Detalhes
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUTO 5 (70070) -->
+            <div class="card reveal">
+                <span class="card-badge badge-order"><i class="fab fa-whatsapp"></i> Faça seu pedido</span>
+                <div class="card-img-wrap">
+                    <img src="./produtos/TELESCOPIOS-REFRA//700_70_greika/Telescópio Greika 70070 Refrator Azimutal.png" alt="Telescópio Greika 70070">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-name">Telescópio Greika 70070 Refrator Azimutal</h3>
+                    <p class="card-desc">Ideal para observação de pássaros, aves e objetos fixos. Observe a Lua e Constelações de Órion, Lyra e Vulpecula.</p>
+                    <div class="card-pricing">
+                        <div class="price-old">R$ 2.385,76</div>
+                        <div class="price-new">R$ 1.259,99</div>
+                        <div class="price-installment">Em até 3x de R$492,87</div>
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://wa.me/5562981897524?text=Olá!%20Quero%20comprar%20o%20Telescópio%20Greika%2070070%20Refrator%20Azimutal" target="_blank" class="btn-whatsapp">
+                            <i class="fab fa-whatsapp"></i> Comprar via WhatsApp
+                        </a>
+                        <button class="btn-details" onclick="window.location.href='./pages/detalhes-produto5.html'">
+                            <i class="fas fa-circle-info"></i> Ver Detalhes
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUTO 6 (BM36060D) - PRONTA ENTREGA -->
+            <div class="card reveal">
+                <span class="card-badge badge-delivery"><i class="fas fa-truck-fast"></i> Pronta Entrega</span>
+                <div class="card-img-wrap">
+                    <img src="./produtos/TELESCOPIOS-REFRA/Refrator Azimutal  BM36060D.png" alt="Telescópio BM36060D">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-name">Telescópio BM36060D Greika</h3>
+                    <p class="card-desc">O mais compacto! Leve, de nova geração, concentra grande entrada de luz para visualizações celestiais e terrestres de qualidade superior.</p>
+                    <div class="card-pricing">
+                        <div class="price-old">R$ 689,76</div>
+                        <div class="price-new">R$ 579,96</div>
+                        <div class="price-installment">Em até 3x de R$226,82</div>
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://wa.me/5562981897524?text=Olá!%20Quero%20comprar%20o%20Telescópio%20BM36060D%20Greika%20(Pronta%20Entrega)" target="_blank" class="btn-whatsapp">
+                            <i class="fab fa-whatsapp"></i> Comprar via WhatsApp
+                        </a>
+                        <button class="btn-details" onclick="window.location.href='./pages/detalhes-produto6.html'">
+                            <i class="fas fa-circle-info"></i> Ver Detalhes
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUTO 7 (Binóculo 10-40x60) -->
+            <div class="card reveal">
+                <span class="card-badge badge-order"><i class="fab fa-whatsapp"></i> Faça seu pedido</span>
+                <div class="card-img-wrap">
+                    <img src="./produtos/BINOCULOS/BINOCULOREFBI 10X40-60.png" alt="Binóculo Greika 10-40x60">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-name">Binóculo Greika 10-40x60</h3>
+                    <p class="card-desc">Ampliação de 10 a 40x, objetiva 60mm, Prisma Porro Bak4, lentes UV multirevestidas azuis. Perfeito para observação astronômica e terrestre.</p>
+                    <div class="card-pricing">
+                        <div class="price-old">R$ 729,76</div>
+                        <div class="price-new">R$ 559,76</div>
+                        <div class="price-installment">Em até 3x de R$219,00</div>
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://wa.me/5562981897524?text=Olá!%20Quero%20comprar%20o%20Binóculo%20Greika%2010-40x60" target="_blank" class="btn-whatsapp">
+                            <i class="fab fa-whatsapp"></i> Comprar via WhatsApp
+                        </a>
+                        <button class="btn-details" onclick="window.location.href='./pages/detalhes-produto7.html'">
+                            <i class="fas fa-circle-info"></i> Ver Detalhes
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUTO 8 (Binóculos 10x50)  PRONTA ENTREGA-->
+            <div class="card reveal">
+                <span class="card-badge badge-delivery"><i class="fas fa-truck-fast"></i> Pronta Entrega</span>
+                <div class="card-img-wrap">
+                    <img src="./produtos/BINOCULOS/Binóculos Greika 10x50 com Bolsa.png" alt="Binóculos Greika 10x50">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-name">Binóculos Greika 10x50 com Bolsa</h3>
+                    <p class="card-desc">Observe crateras da Lua, estrelas duplas, aglomerados estelares e identifique nebulosas. Acompanha bolsa exclusiva.</p>
+                    <div class="card-pricing">
+                        <div class="price-old">R$ 429,76</div>
+                        <div class="price-new">R$ 389,98</div>
+                        <div class="price-installment">Em até 3x de R$152,70</div>
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://wa.me/5562981897524?text=Olá!%20Quero%20comprar%20os%20Binóculos%20Greika%2010x50%20com%20Bolsa" target="_blank" class="btn-whatsapp">
+                            <i class="fab fa-whatsapp"></i> Comprar via WhatsApp
+                        </a>
+                        <button class="btn-details" onclick="window.location.href='./pages/detalhes-produto8.html'">
+                            <i class="fas fa-circle-info"></i> Ver Detalhes
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUTO 9 (Binóculo 10x25DCF) - PRONTA ENTREGA -->
+            <div class="card reveal">
+                <span class="card-badge badge-delivery"><i class="fas fa-truck-fast"></i> Pronta Entrega</span>
+                <div class="card-img-wrap">
+                    <img src="./produtos/BINOCULOS/binoculos 10x25.jpg" alt="Binóculo 10x25DCF">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-name">Binóculo 10x25DCF</h3>
+                    <p class="card-desc">Corpo emborrachado, ampliação 10x, campo de visão 96/1000M. Lentes multicoat ruby. Acompanha bolsa, alça e lenço.</p>
+                    <div class="card-pricing">
+                        <div class="price-old">R$ 399,76</div>
+                        <div class="price-new">R$ 279,98</div>
+                        <div class="price-installment">Em até 3x de R$109,63</div>
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://wa.me/5562981897524?text=Olá!%20Quero%20comprar%20o%20Binóculo%2010x25DCF%20(Pronta%20Entrega)" target="_blank" class="btn-whatsapp">
+                            <i class="fab fa-whatsapp"></i> Comprar via WhatsApp
+                        </a>
+                        <button class="btn-details" onclick="window.location.href='./pages/detalhes-produto9.html'">
+                            <i class="fas fa-circle-info"></i> Ver Detalhes
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUTO 10 (Bússola Guepardo) -->
+            <div class="card reveal">
+                <span class="card-badge badge-order"><i class="fab fa-whatsapp"></i> Faça seu pedido</span>
+                <div class="card-img-wrap">
+                    <img src="./produtos/BUSSOLAS/GUEPARDO/51-K6vpPZmL._AC_SL1000_.jpg" alt="Bússola Guepardo">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-name">Guepardo — Bússola com Régua e Tirante em Nylon</h3>
+                    <p class="card-desc">Corpo ultra resistente, líquida e com régua. Ideal para trilhas, montanhismo e exploração. Compacta, precisa e leve — 75g.</p>
+                    <div class="card-pricing">
+                        <div class="price-old">R$ 89,76</div>
+                        <div class="price-new">R$ 69,98</div>
+                        <div class="price-installment">À vista no Pix</div>
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://wa.me/5562981897524?text=Olá!%20Quero%20comprar%20a%20Bússola%20Guepardo%20com%20Régua" target="_blank" class="btn-whatsapp">
+                            <i class="fab fa-whatsapp"></i> Comprar via WhatsApp
+                        </a>
+                        <button class="btn-details" onclick="window.location.href='./pages/detalhes-produto10.html'">
+                            <i class="fas fa-circle-info"></i> Ver Detalhes
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUTO 11 (Suporte Adaptador) -->
+            <div class="card reveal">
+                <span class="card-badge badge-order"><i class="fab fa-whatsapp"></i> Faça seu pedido</span>
+                <div class="card-img-wrap">
+                    <img src="./produtos/SUPORTES E ADAPTADORES/adaptador_modelos.jpg" alt="Suporte Adaptador Celular">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-name">Suporte Adaptador de Celular para Telescópios e Binóculos</h3>
+                    <p class="card-desc">Capture fotos e vídeos astronômicos com o seu celular. Adaptável a binóculos, telescópios e lunetas. Essencial para astrofotografia.</p>
+                    <div class="card-pricing">
+                        <div class="price-old">R$ 189,76</div>
+                        <div class="price-new">R$ 129,98</div>
+                        <div class="price-installment">Em até 3x de R$50,85</div>
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://wa.me/5562981897524?text=Olá!%20Quero%20comprar%20o%20Suporte%20Adaptador%20de%20Celular%20para%20Telescópios" target="_blank" class="btn-whatsapp">
+                            <i class="fab fa-whatsapp"></i> Comprar via WhatsApp
+                        </a>
+                        <button class="btn-details" onclick="window.location.href='./pages/detalhes-produto11.html'">
+                            <i class="fas fa-circle-info"></i> Ver Detalhes
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="star-divider">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="about-section" id="sobre">
+        <div class="about-text reveal">
+            <span class="section-label">✦ Sobre Nós</span>
+            <h2>Apaixonados pelo <span>cosmos,</span> dedicados a você.</h2>
+            <p>Na <strong>Telescopio Shop Gyn</strong>, acreditamos que explorar o universo é mais do que um hobby — é uma jornada de descobertas que transforma a forma como você vê o mundo.</p>
+            <p>Nossa <strong>missão</strong> é tornar essa experiência acessível para todos, fornecendo equipamentos astronômicos de alta qualidade com atendimento personalizado e confiável.</p>
+
+            <div class="about-features">
+                <div class="feat-item">
+                    <i class="fas fa-star"></i>
+                    <p><strong>Produtos Originais</strong>Apenas equipamentos Greika homologados e certificados.</p>
+                </div>
+                <div class="feat-item">
+                    <i class="fas fa-comments"></i>
+                    <p><strong>Suporte Especializado</strong>Orientamos você na escolha certa.</p>
+                </div>
+                <div class="feat-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p><strong>Goiânia · GO</strong>Rua Carlos Gomes, Cond. Grand Jardim.</p>
+                </div>
+                <div class="feat-item">
+                    <i class="fas fa-credit-card"></i>
+                    <p><strong>Pix & Cartões</strong>Parcelamento em até 3x sem juros.</p>
                 </div>
             </div>
         </div>
-        <div class="copyright">
+
+        <div class="about-visual reveal">
+            <img src="./background/sobre-nos-imagem.jpg" alt="Universo">
+            <div class="about-visual-overlay">
+                <div class="about-visual-quote">
+                    <i class="fas fa-meteor"></i>
+                    <p>"O universo ao seu alcance."</p>
+                    <span>Telescopio Shop Gyn · Goiânia</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact-section" id="contato">
+        <h2>Pronto para <span>explorar?</span></h2>
+        <p>Entre em contato agora e receba orientação personalizada para escolher o equipamento ideal para você.</p>
+
+        <div class="contact-cards">
+            <div class="contact-card">
+                <i class="fab fa-whatsapp"></i>
+                <strong>WhatsApp</strong>
+                <a href="https://wa.me/5562981897524" target="_blank">(62) 98189-7524</a>
+            </div>
+            <div class="contact-card">
+                <i class="fas fa-envelope"></i>
+                <strong>Email</strong>
+                <a href="mailto:wyllamcoelho8@gmail.com">wyllamcoelho8@gmail.com</a>
+            </div>
+            <div class="contact-card">
+                <i class="fas fa-map-marker-alt"></i>
+                <strong>Endereço</strong>
+                <a href="https://maps.app.goo.gl/mEMj8VYdfeYWVsAw5" target="_blank">Rua Carlos Gomes, Grand Jardim, Lorena Parque · Goiânia</a>
+            </div>
+            <div class="contact-card">
+                <i class="fab fa-instagram"></i>
+                <strong>Instagram</strong>
+                <a href="https://www.instagram.com/telescopioshopgyn?igsh=MW83a3lpemRxdmlhNg==" target="_blank">@telescopioshopgyn</a>
+            </div>
+        </div>
+
+        <a href="https://wa.me/5562981897524?text=Olá!%20Vi%20o%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20telescópios." target="_blank" class="big-whatsapp">
+            <i class="fab fa-whatsapp"></i> Falar no WhatsApp Agora
+        </a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <div class="footer-brand">✦ Telescopio Shop Gyn</div>
+                <p class="footer-tagline">O universo ao seu alcance. Equipamentos astronômicos de alta qualidade em Goiânia-GO.</p>
+                <div class="footer-social">
+                    <a href="https://www.instagram.com/telescopioshopgyn?igsh=MW83a3lpemRxdmlhNg==" target="_blank" class="social-btn"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/5562981897524" target="_blank" class="social-btn"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h4>Navegação</h4>
+                <ul>
+                    <li><a href="#">Início</a></li>
+                    <li><a href="#produtos">Produtos</a></li>
+                    <li><a href="./ebooks/ebooks.html">Ebooks</a></li>
+                    <li><a href="#sobre">Sobre Nós</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Contato</h4>
+                <ul>
+                    <li><a href="https://wa.me/5562981897524">(62) 98189-7524</a></li>
+                    <li><a href="mailto:Wyllamcoelho8@gmail.com">Wyllamcoelho8@gmail.com</a></li>
+                    <li><a href="#">Goiânia · GO</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
             <p>© 2025 Telescopio Shop Gyn. Todos os direitos reservados.</p>
+            <div class="pay-methods">
+                <span class="pay-tag"><i class="fas fa-qrcode"></i> Pix</span>
+                <span class="pay-tag"><i class="fas fa-credit-card"></i> Cartões</span>
+                <span class="pay-tag"><i class="fas fa-lock"></i> Compra Segura</span>
+            </div>
         </div>
     </footer>
 
-    <script>
+</div><!-- end page-wrap -->
 
-        function openProductPage(productId) {
-            // Aqui você redireciona para uma página específica ou exibe uma mensagem
-            const productPageUrl = `./pages/detalhes-${productId}.html`; // Exemplo de caminho para a página do produto
-            window.location.href = productPageUrl;
+<script>
+    /* ====== STARFIELD ====== */
+    (function() {
+        const canvas = document.getElementById('starfield');
+        const ctx = canvas.getContext('2d');
+        let stars = [];
+        let W, H;
+
+        function resize() {
+            W = canvas.width = window.innerWidth;
+            H = canvas.height = window.innerHeight;
         }
-    </script>
+
+        function initStars() {
+            stars = [];
+            const count = Math.floor((W * H) / 4000);
+            for (let i = 0; i < count; i++) {
+                stars.push({
+                    x: Math.random() * W,
+                    y: Math.random() * H,
+                    r: Math.random() * 1.2 + 0.2,
+                    alpha: Math.random() * 0.8 + 0.2,
+                    speed: Math.random() * 0.3 + 0.05,
+                    twinkleSpeed: Math.random() * 0.02 + 0.005,
+                    twinkleOffset: Math.random() * Math.PI * 2,
+                    color: Math.random() > 0.8
+                        ? `rgba(126,184,247,`
+                        : Math.random() > 0.5
+                            ? `rgba(232,197,109,`
+                            : `rgba(240,244,255,`
+                });
+            }
+        }
+
+        let frame = 0;
+        function draw() {
+            ctx.clearRect(0, 0, W, H);
+            frame++;
+            stars.forEach(s => {
+                const twinkle = s.alpha * (0.7 + 0.3 * Math.sin(frame * s.twinkleSpeed + s.twinkleOffset));
+                ctx.beginPath();
+                ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+                ctx.fillStyle = s.color + twinkle + ')';
+                ctx.fill();
+                s.y += s.speed * 0.1;
+                if (s.y > H) { s.y = 0; s.x = Math.random() * W; }
+            });
+            requestAnimationFrame(draw);
+        }
+
+        resize();
+        initStars();
+        draw();
+        window.addEventListener('resize', () => { resize(); initStars(); });
+    })();
+
+    /* ====== SCROLL REVEAL ====== */
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                e.target.classList.add('visible');
+                observer.unobserve(e.target);
+            }
+        });
+    }, { threshold: 0.08 });
+
+    document.querySelectorAll('.reveal').forEach((el, i) => {
+        el.style.transitionDelay = (i % 3) * 0.1 + 's';
+        observer.observe(el);
+    });
+</script>
 
 </body>
-
 </html>
