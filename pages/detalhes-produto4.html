@@ -1,125 +1,313 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalhes do Produto</title>
+    <title>Telescópio Greika 90060 Refrator Azimutal – Telescopio Shop Gyn</title>
+    <link rel="icon" href="../icon/favicon-16x16.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=file_open">
     <link rel="stylesheet" href="../styles/styles-produto01.css">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=file_open" />
 </head>
-
 <body>
+
+<!-- STAR CANVAS -->
+<canvas id="starfield"></canvas>
+
+<div class="page-wrap">
+
+    <!-- NAV -->
+    <nav>
+        <a href="../index.html" class="nav-brand">
+            <i class="fas fa-moon brand-icon"></i>
+            Telescopio Shop Gyn
+        </a>
+        <ul class="nav-links">
+            <li><a href="../index.html">Início</a></li>
+            <li><a href="../ebooks/ebooks.html">Ebooks</a></li>
+            <li><a href="../index.html#sobre">Sobre Nós</a></li>
+            <li><a href="../index.html#contato">Contato</a></li>
+        </ul>
+        <a href="https://wa.me/5562981897524?text=Olá!%20Vi%20o%20site%20e%20quero%20saber%20mais%20sobre%20os%20produtos." target="_blank" class="nav-cta">
+            <i class="fab fa-whatsapp"></i> Fale Conosco
+        </a>
+    </nav>
+
+    <!-- BREADCRUMB -->
+    <div class="breadcrumb">
+        <a href="../index.html"><i class="fas fa-house"></i> Início</a>
+        <i class="fas fa-chevron-right"></i>
+        <a href="../index.html#produtos">Produtos</a>
+        <i class="fas fa-chevron-right"></i>
+        <span>Telescópio Greika 90060 Refrator Azimutal</span>
+    </div>
+
+    <!-- PRODUTO NOME -->
     <h1 id="produto-nome">Telescópio Greika 90060 Refrator Azimutal</h1>
+
+    <!-- PRODUTO DETALHES -->
     <div class="produto-detalhes">
-        <!-- Imagem do Produto -->
-        <img id="produto-imagem" src="../produtos/TELESCOPIOS-REFRA/900_60_greika/telescopio90060m2.jpg"
-            alt="Imagem do Produto" />
+        <img id="produto-imagem" class="reveal" src="../produtos/TELESCOPIOS-REFRA/900_60_greika/telescopio90060m2.jpg" alt="Telescópio Greika 90060 Refrator Azimutal" />
 
-        <!-- Caixa de Informações -->
-        <div class="caixa-info">
-            <p id="produto-descricao">Telescópio Greika Refrator Azimutal 90060 com Ampliação até 675x para Observação
-                Celeste e Terrestre
-
-                O Telescópio Greika refrator Azimutal 90060 é designado aos amantes de astronomia que buscam um
-                telescópio com alto alcance e grande precisão para visualizações estáticas, mantendo sua mobilidade e
-                facilidade de manuseio com altíssima qualidade. Permite que os utilizadores tenham uma observação de
-                eventos terrestres ou celestes de ótima qualidade através de métodos simples e práticos. Possui uma
-                estrutura de alumínio com uma abertura de 60mm e distância focal de 900mm, com um localizador (mira) de
-                5x24, 3 lentes oculares sendo uma 4mm (ampliação 225x), uma 20mm (45x), uma 12,5mm (72x), uma lente
-                Ereta (1,5x) e a lente Barlow (3x).</p>
+        <div class="caixa-info reveal">
+            <p id="produto-descricao">Telescópio Greika Refrator Azimutal 90060 com Ampliação até 675x para Observação Celeste e Terrestre.<br><br>O Telescópio Greika refrator Azimutal 90060 é designado aos amantes de astronomia que buscam um telescópio com alto alcance e grande precisão para visualizações estáticas, mantendo sua mobilidade e facilidade de manuseio com altíssima qualidade. Permite que os utilizadores tenham uma observação de eventos terrestres ou celestes de ótima qualidade através de métodos simples e práticos. Possui uma estrutura de alumínio com uma abertura de 60mm e distância focal de 900mm, com um localizador (mira) de 5x24, 3 lentes oculares sendo uma 4mm (ampliação 225x), uma 20mm (45x), uma 12,5mm (72x), uma lente Ereta (1,5x) e a lente Barlow (3x).</p>
 
             <div class="info-valor">
-                <br>
-                <span>
-                    Por apenas:
-                </span>
-                <span id="produto-preco">R$ 1.329,99</span>
+                <span>Por apenas:</span>
+                <span id="produto-preco" data-preco="1329.99">R$ 1.329,99</span>
+            </div>
+            <!-- NOVO: Campo de Cupom -->
+            <div class="cupom-container" style="margin: 15px 0;">
+                <div style="display: flex; gap: 8px;">
+                    <input type="text" id="input-cupom" placeholder="Tem cupom? Digite aqui" style="padding: 10px; border: 1px solid #ccc; border-radius: 4px; width: 100%; font-family: 'DM Sans', sans-serif; text-transform: uppercase;">
+                    <button onclick="aplicarCupom()" style="background: #e8c56d; color: #111; border: none; padding: 10px 15px; border-radius: 4px; font-weight: 600; cursor: pointer; transition: 0.3s;">Aplicar</button>
+                </div>
+                <p id="msg-cupom" style="margin-top: 8px; font-size: 14px; display: none; font-weight: 500;"></p>
             </div>
 
             <div class="parcelamento-info-container">
-                <p class="parcelamento-info">
-                    Em até 3x de R$ 520,77
-                </p>
+                <p class="parcelamento-info">Em até 3x de R$ 520,77</p>
             </div>
+
             <div class="botoes">
+                <a id="whatsapp-link" target="_blank">WhatsApp</a>
                 <button onclick="window.open('https://greika.com.br/images/anexos/TELESCOPIO-90060.pdf')">
-                    <span class="material-symbols-outlined">
-                        file_open
-                    </span> Acesse o Manual</button>
-                <a id="whatsapp-link" target="_blank">
-                    WhatsApp
-                </a>
+                    <span class="material-symbols-outlined">file_open</span>
+                    Acesse o Manual
+                </button>
             </div>
         </div>
     </div>
 
-    <!-- Galeria de Imagens -->
-    <div class="galeria">
+    <!-- GALERIA -->
+    <div class="galeria reveal">
         <h2>Galeria de Imagens</h2>
-        <img src="../produtos/TELESCOPIOS-REFRA/900_60_greika/telescopio90060m(1).jpg" alt="Imagem 1">
-        <img src="../produtos/TELESCOPIOS-REFRA/900_60_greika/telescopio90060m(2).jpg" alt="Imagem 2">
-        <img src="../produtos/TELESCOPIOS-REFRA/900_60_greika/telescopio90060m(3).jpg" alt="Imagem 3">
-        <img src="../produtos/TELESCOPIOS-REFRA/900_60_greika/telescopio90060m(4).jpg" alt="Imagem 4">
+        <img src="../produtos/TELESCOPIOS-REFRA/900_60_greika/telescopio90060m(1).jpg" alt="Imagem 1" onclick="openLightbox(this.src)">
+        <img src="../produtos/TELESCOPIOS-REFRA/900_60_greika/telescopio90060m(2).jpg" alt="Imagem 2" onclick="openLightbox(this.src)">
+        <img src="../produtos/TELESCOPIOS-REFRA/900_60_greika/telescopio90060m(3).jpg" alt="Imagem 3" onclick="openLightbox(this.src)">
+        <img src="../produtos/TELESCOPIOS-REFRA/900_60_greika/telescopio90060m(4).jpg" alt="Imagem 4" onclick="openLightbox(this.src)">
     </div>
 
-    <!-- Vídeo do Produto -->
-    <div class="video-container">
+    <div class="star-divider"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+    
+    <div class="video-container reveal">
         <h2>Vídeo do Produto</h2>
-        <iframe width="600" height="400" src="https://www.youtube.com/embed/Za7RrDWw8EU" frameborder="0"
+        <iframe src="https://www.youtube.com/embed/Za7RrDWw8EU" frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-        </iframe>
+            allowfullscreen></iframe>
     </div>
+    <div class="star-divider"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
 
 
-    <!-- Rodapé -->
+    <!-- FOOTER -->
     <footer class="footer">
-        <div class="copyright">
-            <p>© 2025 Telescopio Shop Gyn. Todos os direitos reservados.</p>
-        </div>
-        <div class="contact-info">
-            <div class="contact-info__email">
-                <p>Email: Wyllamcoelho8@gmail.com</p>
-                <div class="contact-info__telefone">
-                    <p>Telefone: (62) 981897524</p>
-                    <div class="contact-info__endereço">
-                        <p>Endereço: Rua Carlos Gomes, Condominio Grand Jardim, Lorena Parque Goiânia-GO</p>
-                    </div>
+        <div class="footer-grid">
+            <div>
+                <div class="footer-brand-name">✦ Telescopio Shop Gyn</div>
+                <p class="footer-tagline">O universo ao seu alcance. Equipamentos astronômicos de alta qualidade em Goiânia-GO.</p>
+                <div class="footer-social">
+                    <a href="https://www.instagram.com/telescopioshopgyn?igsh=MW83a3lpemRxdmlhNg==" target="_blank" class="social-btn"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/5562981897524" target="_blank" class="social-btn"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
-        </div>
-        <div class="media-pay">
-            <div class="social-media">
-                <span class="
-                    fab fa-instagram-square"></span>
-                <a href="https://www.instagram.com/telescopioshopgyn?igsh=MW83a3lpemRxdmlhNg==" target="_blank">
-                    Instagram</a>
+            <div class="footer-section">
+                <h4>Navegação</h4>
+                <ul>
+                    <li><a href="../index.html">Início</a></li>
+                    <li><a href="../index.html#produtos">Produtos</a></li>
+                    <li><a href="../ebooks/ebooks.html">Ebooks</a></li>
+                    <li><a href="../index.html#sobre">Sobre Nós</a></li>
+                </ul>
             </div>
-            <div class="payment-info">
-                <a class="pix">Pix</a>
-                <span class="fa fas fa-money-bill-wave"></span>
-                <a class="cartao">Cartões</a>
-                <span class="fa fa-credit-card"></span>
+            <div class="footer-section">
+                <h4>Contato</h4>
+                <ul>
+                    <li><a href="https://wa.me/5562981897524">(62) 98189-7524</a></li>
+                    <li><a href="mailto:Wyllamcoelho8@gmail.com">Wyllamcoelho8@gmail.com</a></li>
+                    <li><a href="#">Goiânia · GO</a></li>
+                </ul>
             </div>
         </div>
-
-
-
+        <div class="footer-bottom">
+            <p>&copy; <span id="ano-atual"></span> Telescopio Shop Gyn. Todos os direitos reservados.</p>
+            <div class="pay-methods">
+                <span class="pay-tag"><i class="fas fa-qrcode"></i> Pix</span>
+                <span class="pay-tag"><i class="fas fa-credit-card"></i> Cartões</span>
+                <span class="pay-tag"><i class="fas fa-lock"></i> Compra Segura</span>
+            </div>
+        </div>
     </footer>
 
-    <script>
-        // Obtém a descrição do produto
-        var descricao = document.getElementById("produto-nome").innerText;
+</div><!-- end page-wrap -->
 
-        // Codifica o texto para a URL
-        var mensagem = encodeURIComponent("Olá, quero comprar! " + descricao);
+<!-- LIGHTBOX -->
+<div class="lightbox-overlay" id="lightbox">
+    <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+    <img id="lightbox-img" src="" alt="">
+</div>
 
-        // Define o link do WhatsApp com a mensagem
-        document.getElementById("whatsapp-link").href = "https://wa.me/5562981897524?text=" + mensagem;
-    </script>
+<script>
+    // Atualiza o ano no rodapé automaticamente
+    document.getElementById('ano-atual').textContent = new Date().getFullYear();
 
+    /* ====== STARFIELD ====== */
+    (function() {
+        const canvas = document.getElementById('starfield');
+        const ctx = canvas.getContext('2d');
+        let stars = [];
+        let W, H;
+        function resize() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
+        function initStars() {
+            stars = [];
+            const count = Math.floor((W * H) / 4000);
+            for (let i = 0; i < count; i++) {
+                stars.push({
+                    x: Math.random() * W, y: Math.random() * H,
+                    r: Math.random() * 1.2 + 0.2,
+                    alpha: Math.random() * 0.8 + 0.2,
+                    speed: Math.random() * 0.3 + 0.05,
+                    twinkleSpeed: Math.random() * 0.02 + 0.005,
+                    twinkleOffset: Math.random() * Math.PI * 2,
+                    color: Math.random() > 0.8 ? 'rgba(126,184,247,' : Math.random() > 0.5 ? 'rgba(232,197,109,' : 'rgba(240,244,255,'
+                });
+            }
+        }
+        let frame = 0;
+        function draw() {
+            ctx.clearRect(0, 0, W, H);
+            frame++;
+            stars.forEach(s => {
+                const t = s.alpha * (0.7 + 0.3 * Math.sin(frame * s.twinkleSpeed + s.twinkleOffset));
+                ctx.beginPath();
+                ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+                ctx.fillStyle = s.color + t + ')';
+                ctx.fill();
+                s.y += s.speed * 0.1;
+                if (s.y > H) { s.y = 0; s.x = Math.random() * W; }
+            });
+            requestAnimationFrame(draw);
+        }
+        resize(); initStars(); draw();
+        window.addEventListener('resize', () => { resize(); initStars(); });
+    })();
+
+    /* ====== LÓGICA DE CUPOM E WHATSAPP ====== */
+    let spanPreco = document.getElementById("produto-preco");
+    let precoOriginal = parseFloat(spanPreco.getAttribute("data-preco"));
+    let precoAtual = precoOriginal;
+    let cupomAplicado = "";
+    var descricao = document.getElementById("produto-nome").innerText;
+
+    function aplicarCupom() {
+        let codigoDigitado = document.getElementById("input-cupom").value.toUpperCase().trim();
+        let msgEl = document.getElementById("msg-cupom");
+
+        // NOVO: Se o campo estiver vazio, reseta o preço e ESCONDE a mensagem
+        if (codigoDigitado === "") {
+            precoAtual = precoOriginal;
+            cupomAplicado = "";
+            spanPreco.innerText = "R$ " + precoOriginal.toFixed(2).replace('.', ',');
+            spanPreco.style.color = "#fff"; // Volta para a cor branca original
+            msgEl.style.display = "none";   // Some com o texto vermelho
+            atualizarLinkWhatsApp();
+            return; // Interrompe a função aqui
+        }
+
+        // Verifica se o cupom existe no nosso arquivo cupons.js
+        if (typeof CUPONS_ATIVOS !== 'undefined' && CUPONS_ATIVOS[codigoDigitado]) {
+            let desconto = CUPONS_ATIVOS[codigoDigitado];
+            precoAtual = precoOriginal - (precoOriginal * desconto);
+            cupomAplicado = codigoDigitado;
+
+            // Atualiza o preço na tela visualmente
+            spanPreco.innerText = "R$ " + precoAtual.toFixed(2).replace('.', ',');
+            spanPreco.style.color = "#4ade80"; // Fica verde
+            
+            // Mostra mensagem de sucesso
+            msgEl.innerText = "✅ Cupom aplicado! Você ganhou " + (desconto * 100) + "% de desconto.";
+            msgEl.style.color = "#4ade80";
+            msgEl.style.display = "block";
+
+            atualizarLinkWhatsApp();
+        } else {
+            // Se errar o cupom, reseta para o preço original
+            precoAtual = precoOriginal;
+            cupomAplicado = "";
+            spanPreco.innerText = "R$ " + precoOriginal.toFixed(2).replace('.', ',');
+            spanPreco.style.color = "#fff"; // Volta a cor original
+
+            msgEl.innerText = "❌ Cupom inválido ou expirado.";
+            msgEl.style.color = "#f87171"; // Vermelho de erro
+            msgEl.style.display = "block";
+
+            atualizarLinkWhatsApp();
+        }
+    }
+
+    // NOVO: Ouve o que o usuário digita em tempo real
+    document.getElementById("input-cupom").addEventListener("input", function() {
+        let msgEl = document.getElementById("msg-cupom");
+        
+        // Se o usuário começar a apagar ou digitar de novo, esconde o erro para não incomodar
+        if (msgEl.style.color === "rgb(248, 113, 113)" || msgEl.style.color === "#f87171") {
+            msgEl.style.display = "none";
+        }
+
+        // Se ele apagar tudo até o campo ficar totalmente vazio, chama a função para resetar o preço
+        if (this.value.trim() === "") {
+            aplicarCupom();
+        }
+    });
+
+    function atualizarLinkWhatsApp() {
+        let mensagem = "Olá, quero comprar o " + descricao + "!\n\n";
+        
+        if (cupomAplicado !== "") {
+            // GERAÇÃO DO CÓDIGO DE VALIDAÇÃO (Anti-Fraude)
+            // Transforma o cupom + preco em uma string codificada em Base64
+            let stringSecreta = cupomAplicado + precoAtual.toFixed(2) + "TSG";
+            let hashValidacao = btoa(stringSecreta).substring(0, 8).toUpperCase();
+            
+            mensagem += "✅ *Preço com Desconto:* R$ " + precoAtual.toFixed(2).replace('.', ',') + "\n";
+            mensagem += "🎟️ *Cupom Aplicado:* " + cupomAplicado + "\n";
+            mensagem += "🔒 *Validação do Sistema:* [SYS-" + hashValidacao + "]";
+        } else {
+            mensagem += "Preço: R$ " + precoOriginal.toFixed(2).replace('.', ',');
+        }
+
+        document.getElementById("whatsapp-link").href = "https://wa.me/5562981897524?text=" + encodeURIComponent(mensagem);
+    }
+
+    // Roda uma vez ao carregar a página para configurar o link base sem cupom
+    atualizarLinkWhatsApp();
+
+    /* ====== SCROLL REVEAL ====== */
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+            if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+        });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach((el, i) => {
+        el.style.transitionDelay = (i % 3) * 0.1 + 's';
+        observer.observe(el);
+    });
+
+    /* ====== LIGHTBOX ====== */
+    function openLightbox(src) {
+        document.getElementById('lightbox-img').src = src;
+        document.getElementById('lightbox').classList.add('active');
+    }
+    function closeLightbox() {
+        document.getElementById('lightbox').classList.remove('active');
+    }
+    document.getElementById('lightbox').addEventListener('click', function(e) {
+        if (e.target === this) closeLightbox();
+    });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+</script>
+<script src="../js/cupons.js"></script>
 </body>
-
 </html>

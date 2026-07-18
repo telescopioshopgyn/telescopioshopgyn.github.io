@@ -133,7 +133,7 @@
                     <p class="card-desc">Observação detalhada do sistema solar. Acompanhe a movimentação das estrelas, eclipses lunares, solares e todos os eventos celestes.</p>
                     <div class="card-pricing">
                         <div class="price-old">R$ 4.529,76</div>
-                        <div class="price-new">R$ 3.859,76</div>
+                        <div class="price-new">R$ 3.899,76</div>
                         <div class="price-installment">Em até 12x + juros</div>
                     </div>
                     <div class="card-actions">
@@ -258,8 +258,8 @@
                     <p class="card-desc">Ampliação de 10 a 40x, objetiva 60mm, Prisma Porro Bak4, lentes UV multirevestidas azuis. Perfeito para observação astronômica e terrestre.</p>
                     <div class="card-pricing">
                         <div class="price-old">R$ 729,76</div>
-                        <div class="price-new">R$ 559,76</div>
-                        <div class="price-installment">Em até 3x de R$219,00</div>
+                        <div class="price-new">R$ 559,98</div>
+                        <div class="price-installment">Em até 3x de R$219,18</div>
                     </div>
                     <div class="card-actions">
                         <a href="https://wa.me/5562981897524?text=Olá!%20Quero%20comprar%20o%20Binóculo%20Greika%2010-40x60" target="_blank" class="btn-whatsapp">
@@ -487,7 +487,7 @@
         </div>
 
         <div class="footer-bottom">
-            <p>© 2025 Telescopio Shop Gyn. Todos os direitos reservados.</p>
+            <p>&copy; <span id="ano-atual"></span> Telescopio Shop Gyn. Todos os direitos reservados.</p>
             <div class="pay-methods">
                 <span class="pay-tag"><i class="fas fa-qrcode"></i> Pix</span>
                 <span class="pay-tag"><i class="fas fa-credit-card"></i> Cartões</span>
@@ -499,6 +499,9 @@
 </div><!-- end page-wrap -->
 
 <script>
+    // Atualiza o ano no rodapé automaticamente
+    document.getElementById('ano-atual').textContent = new Date().getFullYear();
+
     /* ====== STARFIELD ====== */
     (function() {
         const canvas = document.getElementById('starfield');
