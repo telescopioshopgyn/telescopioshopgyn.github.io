@@ -201,19 +201,24 @@ Dicas de Uso — Fórmula para calcular a amplitude: Dividir a distância focal 
     let cupomAplicado = "";
     var descricao = document.getElementById("produto-nome").innerText;
 
+    // Função auxiliar para formatar em padrão brasileiro (ex: 1.329,99)
+    function formatarDinheiro(valor) {
+        return valor.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    }
+
     function aplicarCupom() {
         let codigoDigitado = document.getElementById("input-cupom").value.toUpperCase().trim();
         let msgEl = document.getElementById("msg-cupom");
 
-        // NOVO: Se o campo estiver vazio, reseta o preço e ESCONDE a mensagem
+        // Se o campo estiver vazio, reseta o preço e ESCONDE a mensagem
         if (codigoDigitado === "") {
             precoAtual = precoOriginal;
             cupomAplicado = "";
-            spanPreco.innerText = "R$ " + precoOriginal.toFixed(2).replace('.', ',');
-            spanPreco.style.color = "#fff"; // Volta para a cor branca original
-            msgEl.style.display = "none";   // Some com o texto vermelho
+            spanPreco.innerText = "R$ " + formatarDinheiro(precoOriginal);
+            spanPreco.style.color = "#fff"; 
+            msgEl.style.display = "none";   
             atualizarLinkWhatsApp();
-            return; // Interrompe a função aqui
+            return; 
         }
 
         // Verifica se o cupom existe no nosso arquivo cupons.js
@@ -222,9 +227,9 @@ Dicas de Uso — Fórmula para calcular a amplitude: Dividir a distância focal 
             precoAtual = precoOriginal - (precoOriginal * desconto);
             cupomAplicado = codigoDigitado;
 
-            // Atualiza o preço na tela visualmente
-            spanPreco.innerText = "R$ " + precoAtual.toFixed(2).replace('.', ',');
-            spanPreco.style.color = "#4ade80"; // Fica verde
+            // Atualiza o preço na tela visualmente com o ponto de milhar
+            spanPreco.innerText = "R$ " + formatarDinheiro(precoAtual);
+            spanPreco.style.color = "#4ade80"; 
             
             // Mostra mensagem de sucesso
             msgEl.innerText = "✅ Cupom aplicado! Você ganhou " + (desconto * 100) + "% de desconto.";
@@ -236,27 +241,27 @@ Dicas de Uso — Fórmula para calcular a amplitude: Dividir a distância focal 
             // Se errar o cupom, reseta para o preço original
             precoAtual = precoOriginal;
             cupomAplicado = "";
-            spanPreco.innerText = "R$ " + precoOriginal.toFixed(2).replace('.', ',');
-            spanPreco.style.color = "#fff"; // Volta a cor original
+            spanPreco.innerText = "R$ " + formatarDinheiro(precoOriginal);
+            spanPreco.style.color = "#fff"; 
 
             msgEl.innerText = "❌ Cupom inválido ou expirado.";
-            msgEl.style.color = "#f87171"; // Vermelho de erro
+            msgEl.style.color = "#f87171"; 
             msgEl.style.display = "block";
 
             atualizarLinkWhatsApp();
         }
     }
 
-    // NOVO: Ouve o que o usuário digita em tempo real
+    // Ouve o que o usuário digita em tempo real
     document.getElementById("input-cupom").addEventListener("input", function() {
         let msgEl = document.getElementById("msg-cupom");
         
-        // Se o usuário começar a apagar ou digitar de novo, esconde o erro para não incomodar
+        // Se o usuário começar a apagar ou digitar de novo, esconde o erro
         if (msgEl.style.color === "rgb(248, 113, 113)" || msgEl.style.color === "#f87171") {
             msgEl.style.display = "none";
         }
 
-        // Se ele apagar tudo até o campo ficar totalmente vazio, chama a função para resetar o preço
+        // Se ele apagar tudo, reseta o preço
         if (this.value.trim() === "") {
             aplicarCupom();
         }
@@ -267,21 +272,21 @@ Dicas de Uso — Fórmula para calcular a amplitude: Dividir a distância focal 
         
         if (cupomAplicado !== "") {
             // GERAÇÃO DO CÓDIGO DE VALIDAÇÃO (Anti-Fraude)
-            // Transforma o cupom + preco em uma string codificada em Base64
             let stringSecreta = cupomAplicado + precoAtual.toFixed(2) + "TSG";
             let hashValidacao = btoa(stringSecreta).substring(0, 8).toUpperCase();
             
-            mensagem += "✅ *Preço com Desconto:* R$ " + precoAtual.toFixed(2).replace('.', ',') + "\n";
+            // Aplica a formatação BR também na mensagem do WhatsApp
+            mensagem += "✅ *Preço com Desconto:* R$ " + formatarDinheiro(precoAtual) + "\n";
             mensagem += "🎟️ *Cupom Aplicado:* " + cupomAplicado + "\n";
             mensagem += "🔒 *Validação do Sistema:* [SYS-" + hashValidacao + "]";
         } else {
-            mensagem += "Preço: R$ " + precoOriginal.toFixed(2).replace('.', ',');
+            mensagem += "Preço: R$ " + formatarDinheiro(precoOriginal);
         }
 
         document.getElementById("whatsapp-link").href = "https://wa.me/5562981897524?text=" + encodeURIComponent(mensagem);
     }
 
-    // Roda uma vez ao carregar a página para configurar o link base sem cupom
+    // Roda uma vez ao carregar a página para configurar o link base
     atualizarLinkWhatsApp();
 
     /* ====== SCROLL REVEAL ====== */
