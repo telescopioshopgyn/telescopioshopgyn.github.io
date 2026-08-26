@@ -4,5 +4,6 @@
 const CUPONS_ATIVOS = {
     "AULAS10": 0.10,
     "GRET15": 0.15,
+    "ECLIPSE": 0.05,
     "PROMO5": 0.05
 };
